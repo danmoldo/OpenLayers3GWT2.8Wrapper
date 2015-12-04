@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>today.learnjava.ol3</groupId>
+  <artifactId>gwt28-ol3</artifactId>
+  <packaging>pom</packaging>
+  <version>0.1-SNAPSHOT</version>
+  <name>${project.artifactId}</name>
+
+  <properties>
+    <gwt.version>2.8.0-beta1</gwt.version>
+    <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <gwt.maven.plugin.version>2.8.0</gwt.maven.plugin.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.gwt</groupId>
+        <artifactId>gwt</artifactId>
+        <version>${gwt.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.gwt</groupId>
+        <artifactId>gwt-user</artifactId>
+        <version>${gwt.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.gwtbootstrap3</groupId>
+        <artifactId>gwtbootstrap3</artifactId>
+        <version>0.9.1</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.gwtbootstrap3</groupId>
+        <artifactId>gwtbootstrap3-extras</artifactId>
+        <version>0.9.1</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.googlecode.gwtquery</groupId>
+        <artifactId>gwtquery</artifactId>
+        <version>1.4.3</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <modules>
+    <module>gwt28-ol3-wrapper</module>
+    <module>gwt28-ol3-demo</module>
+  </modules>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>gwt-maven-plugin</artifactId>
+          <version>${gwt.maven.plugin.version}</version>
+          <configuration>
+            <style>PRETTY</style>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <repositories>
+
+    <repository>
+      <id>com.google.gwt</id>
+      <name>GWT Sonatype Releases</name>
+      <url>https://oss.sonatype.org/content/repositories/google-releases/</url>
+      <releases><enabled>true</enabled></releases>
+      <snapshots><enabled>true</enabled></snapshots>
+    </repository>
+
+    <repository>
+      <id>google-snapshots</id>
+      <name>Google Snapshots</name>
+      <url>https://oss.sonatype.org/content/repositories/google-snapshots/</url>
+      <releases><enabled>true</enabled></releases>
+      <snapshots><enabled>true</enabled></snapshots>
+    </repository>
+
+
+  </repositories>
+  <pluginRepositories>
+    <!--<pluginRepository>-->
+      <!--<id>com.google.gwt</id>-->
+      <!--<name>GWT Sonatype Releases</name>-->
+      <!--<url>https://oss.sonatype.org/content/repositories/google-releases/</url>-->
+    <!--</pluginRepository>-->
+
+    <pluginRepository>
+      <id>com.google.gwt</id>
+      <name>Jboss Repo</name>
+      <url>https://repository.jboss.org/nexus/content/repositories/public/</url>
+      <releases><enabled>true</enabled></releases>
+      <snapshots><enabled>true</enabled></snapshots>
+    </pluginRepository>
+
+    <pluginRepository>
+      <id>google-snapshots</id>
+      <name>Google Snapshots</name>
+      <url>https://oss.sonatype.org/content/repositories/google-snapshots/</url>
+      <releases><enabled>true</enabled></releases>
+      <snapshots><enabled>true</enabled></snapshots>
+    </pluginRepository>
+
+  </pluginRepositories>
+
+</project>

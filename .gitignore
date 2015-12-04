@@ -1,0 +1,9 @@
+/.project
+/.classpath
+/.idea
+/.settings/
+/gwt28-ol3-wrapper/.idea
+/gwt28-ol3-demo/.idea
+/gwt28-ol3-wrapper/target
+/gwt28-ol3-demo/target
+*.iml

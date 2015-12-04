@@ -1,0 +1,17 @@
+/** Add css rules here for your application. */
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0px;	
+}
+
+.mapPlayground {
+	height: 100%;
+	width: 100%;
+}
+.mapOverlay {
+	height: 100%;
+	width: 100%;
+}

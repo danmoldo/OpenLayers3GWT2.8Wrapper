@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<module rename-to='gwt28ol3demo'>
+
+  <inherits name='com.google.gwt.user.User'/>
+  <inherits name='wrapper'/>
+  <inherits name="org.gwtbootstrap3.GwtBootstrap3"/>
+
+  <entry-point class='today.learnjava.ol3.demo.DemoEntryPoint'/>
+
+  <source path='demo'/>
+
+  <!-- allow Super Dev Mode -->
+  <add-linker name="xsiframe"/>
+  <set-configuration-property name="devModeRedirectEnabled" value="true"/>
+  <set-property name="compiler.useSourceMaps" value="true" />
+</module>
