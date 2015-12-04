@@ -1,5 +1,6 @@
-# OpenLayers3GWT2.8Wrapper
-This is a wrapper over [OpenLayers 3](http://openlayers.org/ "OpenLayers 3 website") using JsInterop from GWT 2.8
+# Wrapper of OpenLayers 3 using the new JsInterop from GWT 2.8
+
+This is a wrapper over [OpenLayers 3](http://openlayers.org/ "OpenLayers 3 website") using JsInterop v1.0: Nextgen GWT/JavaScript Interoperability
 
 The project has two modules:
   * a GWT wrapper over OpenLayers 3 (gwt28-ol3-wrapper)
