@@ -30,6 +30,36 @@ import ol.style.ImageOptions;
  */
 public class OLFactory {
 
+    /** Controls **/
+
+    public static native ol.control.Attribution createAttributionControl() /*-{
+        return new $wnd.ol.control.Attribution();
+    }-*/;
+
+    public static native FullScreen createFullScreenControl() /*-{
+        return new $wnd.ol.control.FullScreen();
+    }-*/;
+
+    public static native MousePosition createMousePositionControl() /*-{
+        return new $wnd.ol.control.MousePosition();
+    }-*/;
+
+    public static native Rotate createRotateControl() /*-{
+        return new $wnd.ol.control.Rotate();
+    }-*/;
+
+    public static native ScaleLine createScaleLineControl() /*-{
+        return new $wnd.ol.control.ScaleLine();
+    }-*/;
+
+    public static native ZoomSlider createZoomSliderControl() /*-{
+        return new $wnd.ol.control.ZoomSlider();
+    }-*/;
+
+    public static native ZoomToExtent createZoomToExtentControl() /*-{
+        return new $wnd.ol.control.ZoomToExtent();
+    }-*/;
+
     /** Map **/
 
     public static native Map createMap(MapOptions mapOptions) /*-{
@@ -151,38 +181,6 @@ public class OLFactory {
 
     public static native TextOptions createTextOptions() /*-{
         return {};
-    }-*/;
-
-
-
-    /** Controls **/
-
-    public static native ol.control.Attribution createAttribution() /*-{
-        return new $wnd.ol.control.Attribution();
-    }-*/;
-
-    public static native FullScreen createFullScreen() /*-{
-		return new $wnd.ol.control.FullScreen();
-    }-*/;
-
-    public static native MousePosition createMousePosition() /*-{
-		return new $wnd.ol.control.MousePosition();
-    }-*/;
-
-    public static native Rotate createRotate() /*-{
-		return new $wnd.ol.control.Rotate();
-    }-*/;
-
-    public static native ScaleLine createScaleLine() /*-{
-		return new $wnd.ol.control.ScaleLine();
-    }-*/;
-
-    public static native ZoomToExtent createZoomToExtent() /*-{
-        return new $wnd.ol.control.ZoomToExtent();
-    }-*/;
-
-    public static native ZoomSlider createZoomSlider() /*-{
-		return new $wnd.ol.control.ZoomSlider();
     }-*/;
 
     /** Interactions **/

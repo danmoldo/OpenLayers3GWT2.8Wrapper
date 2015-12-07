@@ -1,16 +1,19 @@
 package ol.control;
 
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 /**
- * 
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
-public abstract class ScaleLine implements Control {
-    
-    public static native ScaleLine getScaleLine();
-    
+public interface ScaleLine extends Control {
+
+    @JsProperty
+    String getUnits();
+
+    @JsProperty
+    void setUnits(String units);
+
 }
 

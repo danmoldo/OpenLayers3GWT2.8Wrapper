@@ -58,12 +58,12 @@ public class OsmExample implements Example {
         map.addLayer(tileDebugLayer);
 
         // add some controls
-        map.addControl(OLFactory.createFullScreen());
-        map.addControl(OLFactory.createZoomSlider());
-        map.addControl(OLFactory.createMousePosition());
-        map.addControl(OLFactory.createZoomToExtent());
+        map.addControl(OLFactory.createFullScreenControl());
+        map.addControl(OLFactory.createZoomSliderControl());
+        map.addControl(OLFactory.createMousePositionControl());
+        map.addControl(OLFactory.createZoomToExtentControl());
 
-        Attribution attribution = Attribution.newInstance();
+        Attribution attribution = OLFactory.createAttributionControl();
         attribution.setCollapsed(true);
 
         map.addControl(attribution);

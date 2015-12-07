@@ -1,16 +1,26 @@
 package ol.control;
 
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
+import ol.proj.Projection;
 
 /**
- * 
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
-public abstract class MousePosition implements Control {
+public interface MousePosition extends Control {
 
-    public static native MousePosition getMousePosition();
-    
+    @JsProperty
+    String getCoordinateFormat();
+
+    @JsProperty
+    Projection getProjection();
+
+    @JsProperty
+    void setCoordinateFormat(String coordinateFormat);
+
+    @JsProperty
+    void setProjection(Projection projection);
+
 }
 

@@ -59,18 +59,18 @@ public class OverlayExample implements Example {
 
 
         // add some controls
-        map.addControl(OLFactory.createScaleLine());
-        map.addControl(OLFactory.createFullScreen());
-        map.addControl(OLFactory.createZoomSlider());
-        map.addControl(OLFactory.createMousePosition());
-        map.addControl(OLFactory.createZoomToExtent());
+        map.addControl(OLFactory.createScaleLineControl());
+        map.addControl(OLFactory.createFullScreenControl());
+        map.addControl(OLFactory.createZoomSliderControl());
+        map.addControl(OLFactory.createMousePositionControl());
+        map.addControl(OLFactory.createZoomToExtentControl());
+        map.addControl(OLFactory.createRotateControl());
 
 
         // add some interactions
         map.addInteraction(OLFactory.createKeyboardPan());
         map.addInteraction(OLFactory.createKeyboardZoom());
 
-        map.addControl(OLFactory.createRotate());
 
 
         OverlayOptions overlayOptions = OLFactory.createOverlayOptions();

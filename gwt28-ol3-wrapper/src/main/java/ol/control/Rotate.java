@@ -3,14 +3,10 @@ package ol.control;
 import jsinterop.annotations.JsType;
 
 /**
- * 
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
-public abstract class Rotate implements Control {
-    
-    public static native Rotate getRotate();
-    
+public interface Rotate extends Control {
+
 }
 

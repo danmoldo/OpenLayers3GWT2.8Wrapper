@@ -3,14 +3,10 @@ package ol.control;
 import jsinterop.annotations.JsType;
 
 /**
- * 
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
-public abstract class FullScreen implements Control {
-    
-    public static native FullScreen getFullScreen();
-    
+public interface FullScreen extends Control {
+
 }
 

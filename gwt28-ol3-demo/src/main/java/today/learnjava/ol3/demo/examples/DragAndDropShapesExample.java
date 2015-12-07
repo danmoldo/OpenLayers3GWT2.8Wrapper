@@ -55,11 +55,11 @@ public class DragAndDropShapesExample implements Example {
         map.setView(view);
         map.setTarget("mapDragAndDropShapes");
 
-        map.addControl(OLFactory.createScaleLine());
-        map.addControl(OLFactory.createFullScreen());
-        map.addControl(OLFactory.createZoomSlider());
-        map.addControl(OLFactory.createMousePosition());
-        map.addControl(OLFactory.createZoomToExtent());
+        map.addControl(OLFactory.createScaleLineControl());
+        map.addControl(OLFactory.createFullScreenControl());
+        map.addControl(OLFactory.createZoomSliderControl());
+        map.addControl(OLFactory.createMousePositionControl());
+        map.addControl(OLFactory.createZoomToExtentControl());
 
 
         VectorOptions vectorLayerOptions = OLFactory.createVectorLayerOptions();

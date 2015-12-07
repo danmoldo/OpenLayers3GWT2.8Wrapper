@@ -60,13 +60,14 @@ public class ClusteringExample implements Example {
         map.addLayer(mapQuestLayer);
 
         // add some controls
-        map.addControl(OLFactory.createScaleLine());
-        map.addControl(OLFactory.createFullScreen());
-        map.addControl(OLFactory.createZoomSlider());
-        map.addControl(OLFactory.createMousePosition());
-        map.addControl(OLFactory.createZoomToExtent());
+        map.addControl(OLFactory.createScaleLineControl());
+        map.addControl(OLFactory.createFullScreenControl());
+        map.addControl(OLFactory.createZoomSliderControl());
+        map.addControl(OLFactory.createMousePositionControl());
+        map.addControl(OLFactory.createZoomToExtentControl());
+        map.addControl(OLFactory.createRotateControl());
         
-        Attribution attribution = OLFactory.createAttribution();
+        Attribution attribution = OLFactory.createAttributionControl();
         attribution.setCollapsed(true);
         
         map.addControl(attribution);
@@ -75,7 +76,6 @@ public class ClusteringExample implements Example {
         map.addInteraction(OLFactory.createKeyboardPan());
         map.addInteraction(OLFactory.createKeyboardZoom());
 
-        map.addControl(OLFactory.createRotate());
 
 
         int count = 1000;

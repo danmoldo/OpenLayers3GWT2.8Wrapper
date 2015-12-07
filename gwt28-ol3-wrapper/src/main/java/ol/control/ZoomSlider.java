@@ -3,14 +3,10 @@ package ol.control;
 import jsinterop.annotations.JsType;
 
 /**
- * 
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
-public abstract class ZoomSlider implements Control {
-    
-    public static native ZoomSlider getZoomSlider();
-    
+public interface ZoomSlider extends Control {
+
 }
 

@@ -1,22 +1,19 @@
 package ol.control;
 
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 /**
- * 
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
-@JsType()
-public abstract class Attribution implements Control {
+@JsType(isNative = true)
+public interface Attribution extends Control {
 
-    public static native Attribution newInstance() /*-{
-        return new $wnd.ol.control.Attribution();
-    }-*/;
+    @JsProperty
+    void setCollapsed(boolean collapsed);
 
-    public abstract void setCollapsed(boolean collapsed);
-    
-    public abstract void setCollapsible(boolean collapsible);
+    @JsProperty
+    void setCollapsible(boolean collapsible);
     
 }
 
