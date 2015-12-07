@@ -3,16 +3,10 @@ package ol.interaction;
 import jsinterop.annotations.JsType;
 
 /**
- * 
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
-public abstract class Modify implements Pointer {
+public interface Modify extends Pointer {
 
-    public static native Modify newInstance() /*-{
-        return new $wnd.ol.interaction.Modify();
-    }-*/;
-    
 }
 

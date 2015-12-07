@@ -3,14 +3,10 @@ package ol.interaction;
 import jsinterop.annotations.JsType;
 
 /**
- * 
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
-public abstract class KeyboardPan implements Interaction {
+public interface KeyboardPan extends Interaction {
 
-    public static native KeyboardPan getKeyboardPan();
-    
 }
 

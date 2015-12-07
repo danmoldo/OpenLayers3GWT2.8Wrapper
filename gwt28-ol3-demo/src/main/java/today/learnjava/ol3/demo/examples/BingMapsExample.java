@@ -1,17 +1,13 @@
 package today.learnjava.ol3.demo.examples;
 
 import ol.*;
-import ol.interaction.Select;
-import ol.interaction.Translate;
-import ol.interaction.TranslateOptions;
-import ol.layer.LayerOptions;
+import olx.MapOptions;
+import olx.layer.LayerOptions;
 import ol.layer.Tile;
-import ol.layer.Vector;
-import ol.layer.VectorOptions;
 import ol.source.BingMaps;
-import ol.source.BingMapsOptions;
+import olx.source.BingMapsOptions;
 import ol.source.MapQuest;
-import ol.source.MapQuestOptions;
+import olx.source.MapQuestOptions;
 
 /**
  * @author Dan Moldovan
@@ -22,9 +18,9 @@ public class BingMapsExample implements Example {
 
     public void show() {
 
-        LayerOptions layerOptions = OLFactory.createLayerOptions();
+        LayerOptions layerOptions = OLFactory.createOptions();
 
-        MapQuestOptions mapQuestOptions = OLFactory.createMapQuestOptions();
+        MapQuestOptions mapQuestOptions = OLFactory.createOptions();
         mapQuestOptions.setLayer("hyb");
 
         MapQuest mapQuestSource = OLFactory.createMapQuestSource(mapQuestOptions);
@@ -42,18 +38,18 @@ public class BingMapsExample implements Example {
         view.setZoom(2);
 
 
-        BingMapsOptions bingMapsOptions = OLFactory.createBingMapOptions();
+        BingMapsOptions bingMapsOptions = OLFactory.createOptions();
         bingMapsOptions.setImagerySet("Road");
         bingMapsOptions.setKey(API_KEY);
         BingMaps bingMaps = OLFactory.createBingMaps(bingMapsOptions);
 
-        layerOptions = OLFactory.createLayerOptions();
+        layerOptions = OLFactory.createOptions();
         layerOptions.setSource(bingMaps);
         Tile bingTile = OLFactory.createTileLayer(layerOptions);
 
 
         // create the map
-        MapOptions mapOptions = OLFactory.createMapOptions();
+        MapOptions mapOptions = OLFactory.createOptions();
         Map map = OLFactory.createMap(mapOptions);
 
         map.addLayer(mapQuestLayer);

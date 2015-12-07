@@ -1,22 +1,17 @@
-package ol.interaction;
+package olx.style;
 
 import jsinterop.annotations.JsMethod;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
-import ol.*;
-
 /**
  * @author Dan Moldovan
  */
 @JsType(isNative = true)
-public interface Interaction extends ol.Object {
+public interface FillOptions {
 
     @JsProperty
-    boolean getActive();
-
-    @JsProperty
-    void setActive(boolean active);
-
+    void setColor(String color);
+    
 }
 

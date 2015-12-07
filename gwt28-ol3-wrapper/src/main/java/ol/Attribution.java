@@ -1,6 +1,7 @@
 package ol;
 
 import jsinterop.annotations.JsType;
+import olx.AttributionOptions;
 
 /**
  * 

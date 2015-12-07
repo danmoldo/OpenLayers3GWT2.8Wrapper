@@ -7,21 +7,21 @@ import ol.control.ScaleLine;
 import ol.control.ZoomSlider;
 import ol.control.ZoomToExtent;
 import ol.geom.*;
-import ol.interaction.DragAndDrop;
-import ol.interaction.KeyboardPan;
-import ol.interaction.KeyboardZoom;
-import ol.interaction.TranslateOptions;
-import ol.layer.*;
+import ol.interaction.*;
 import ol.layer.Image;
 import ol.layer.Tile;
 import ol.proj.Projection;
-import ol.proj.ProjectionOptions;
+import olx.MapOptions;
+import olx.OverlayOptions;
+import olx.ViewOptions;
+import olx.proj.ProjectionOptions;
 import ol.source.*;
-import ol.source.Vector;
-import ol.source.VectorOptions;
+import olx.source.*;
 import ol.style.*;
 import ol.style.Circle;
-import ol.style.ImageOptions;
+import olx.style.*;
+import olx.interaction.TranslateOptions;
+import olx.layer.LayerOptions;
 
 /**
  *
@@ -70,14 +70,36 @@ public class OLFactory {
         return new $wnd.ol.geom.Circle(coordinates);
     }-*/;
 
+    /** Interactions **/
+
+    public static native DragAndDrop createDragAndDrop() /*-{
+        return new $wnd.ol.interaction.DragAndDrop();
+    }-*/;
+
+    public static native KeyboardPan createKeyboardPan() /*-{
+        return new $wnd.ol.interaction.KeyboardPan();
+    }-*/;
+
+    public static native KeyboardZoom createKeyboardZoom() /*-{
+        return new $wnd.ol.interaction.KeyboardZoom();
+    }-*/;
+
+    public static native Modify createModify() /*-{
+        return new $wnd.ol.interaction.Modify();
+    }-*/;
+
+    public static native ol.interaction.Select createSelectInteraction() /*-{
+        return new $wnd.ol.interaction.Select();
+    }-*/;
+
+    public static native ol.interaction.Translate createTranslateInteraction(TranslateOptions translateOptions) /*-{
+        return new $wnd.ol.interaction.Translate(translateOptions);
+    }-*/;
+
     /** Map **/
 
     public static native Map createMap(MapOptions mapOptions) /*-{
 		return new $wnd.ol.Map(mapOptions);
-    }-*/;
-
-    public static native MapOptions createMapOptions() /*-{
-        return {};
     }-*/;
 
     /** Layers **/
@@ -88,10 +110,6 @@ public class OLFactory {
     
     public static native Tile createTileLayer(LayerOptions layerOptions) /*-{
 		return new $wnd.ol.layer.Tile(layerOptions);
-    }-*/;
-
-    public static native LayerOptions createLayerOptions() /*-{
-        return {};
     }-*/;
 
     /** Sources **/
@@ -108,25 +126,13 @@ public class OLFactory {
 		return new $wnd.ol.source.MapQuest(mapQuestOptions);
     }-*/;
 
-    public static native MapQuestOptions createMapQuestOptions() /*-{
-		return {};
-    }-*/;
-
     public static native Stamen createStamenSource(StamenOptions stamenOptions) /*-{
         return new $wnd.ol.source.Stamen(stamenOptions);
-    }-*/;
-
-    public static native StamenOptions createStamenOptions() /*-{
-        return {};
     }-*/;
     
     public static native Xyz createXyz(XyzOptions xyzOptions) /*-{
 		return new $wnd.ol.source.XYZ(xyzOptions);
 	}-*/;
-
-    public static native BingMapsOptions createBingMapOptions() /*-{
-        return {};
-    }-*/;
 
     public static native BingMaps createBingMaps(BingMapsOptions bingMapsOptions) /*-{
         return new $wnd.ol.source.BingMaps(bingMapsOptions);
@@ -153,16 +159,8 @@ public class OLFactory {
         return new $wnd.ol.style.Circle(circleOptions);
     }-*/;
 
-    public static native CircleOptions createCircleOptions() /*-{
-        return {};
-    }-*/;
-
     public static native Fill createFill(FillOptions fillOptions) /*-{
         return new $wnd.ol.style.Fill(fillOptions);
-    }-*/;
-
-    public static native FillOptions createFillOptions() /*-{
-        return {};
     }-*/;
 
     public static native ol.style.Image createImageStyle(ImageOptions imageOptions) /*-{
@@ -173,49 +171,19 @@ public class OLFactory {
         return new $wnd.ol.style.Stroke(strokeOptions);
     }-*/;
 
-    public static native StrokeOptions createStrokeOptions() /*-{
-        return {};
-    }-*/;
-
     public static native Style createStyle(StyleOptions styleOptions) /*-{
         return new $wnd.ol.style.Style(styleOptions);
-    }-*/;
-
-    public static native StyleOptions createStyleOptions() /*-{
-        return {};
     }-*/;
 
     public static native Text createText(TextOptions textOptions) /*-{
         return new $wnd.ol.style.Text(textOptions);
     }-*/;
 
-    public static native TextOptions createTextOptions() /*-{
-        return {};
-    }-*/;
-
-    /** Interactions **/
-
-    public static native DragAndDrop createDragAndDrop() /*-{
-        return new $wnd.ol.interaction.DragAndDrop();
-    }-*/;
-    
-    public static native KeyboardPan createKeyboardPan() /*-{
-        return new $wnd.ol.interaction.KeyboardPan();
-    }-*/;
-
-    public static native KeyboardZoom createKeyboardZoom() /*-{
-        return new $wnd.ol.interaction.KeyboardZoom();
-    }-*/;
-
     public static native Feature createFeature() /*-{
         return new $wnd.ol.Feature();
     }-*/;
 
-    public static native ol.layer.VectorOptions createVectorLayerOptions() /*-{
-        return {};
-    }-*/;
-
-    public static native ol.layer.Vector createVectorLayer(ol.layer.VectorOptions vectorOptions) /*-{
+    public static native ol.layer.Vector createVectorLayer(olx.layer.VectorOptions vectorOptions) /*-{
         return new $wnd.ol.layer.Vector(vectorOptions);
     }-*/;
 
@@ -223,24 +191,12 @@ public class OLFactory {
         return new $wnd.ol.source.Vector(vectorOptions);
     }-*/;
 
-    public static native ol.source.VectorOptions createVectorSourceOptions() /*-{
-        return {};
-    }-*/;
-
     public static native ol.source.Cluster createClusterSource(ClusterOptions clusterOptions) /*-{
         return new $wnd.ol.source.Cluster(clusterOptions);
     }-*/;
 
-    public static native ol.source.ClusterOptions createClusterOptions() /*-{
-        return {};
-    }-*/;
-
      public static native TileDebug createTileDebug(TileDebugOptions tileDebugOptions) /*-{
         return new $wnd.ol.source.TileDebug(tileDebugOptions);
-    }-*/;
-
-    public static native ol.source.TileDebugOptions createTileDebugOptions() /*-{
-        return {};
     }-*/;
 
     public static native Osm createOsm(XyzOptions osmOptions) /*-{
@@ -251,28 +207,12 @@ public class OLFactory {
         return new $wnd.ol.Overlay(overlayOptions);
     }-*/;
 
-    public static native ol.OverlayOptions createOverlayOptions() /*-{
-        return {};
-    }-*/;
-
     public static native ol.style.StyleFunction createStyleFunction() /*-{
         return new $wnd.ol.style.StyleFunction();
     }-*/;
 
     public static native ol.format.GeoJSON createGeoJSONFormat() /*-{
         return new $wnd.ol.format.GeoJSON();
-    }-*/;
-
-    public static native ol.interaction.Select createSelectInteraction() /*-{
-        return new $wnd.ol.interaction.Select();
-    }-*/;
-
-    public static native ol.interaction.TranslateOptions createTranslateOptions() /*-{
-        return {};
-    }-*/;
-
-    public static native ol.interaction.Translate createTranslateInteraction(TranslateOptions translateOptions) /*-{
-        return new $wnd.ol.interaction.Translate(translateOptions);
     }-*/;
 
     /** Common **/

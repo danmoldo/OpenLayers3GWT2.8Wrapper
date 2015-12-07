@@ -1,6 +1,7 @@
 package ol.tilegrid;
 
 import jsinterop.annotations.JsType;
+import olx.tilegrid.TileGridOptions;
 
 /**
  * 

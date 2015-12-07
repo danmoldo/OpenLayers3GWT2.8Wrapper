@@ -6,9 +6,14 @@ import ol.control.Attribution;
 import ol.geom.Point;
 import ol.layer.Tile;
 import ol.source.*;
-import ol.layer.LayerOptions;
+import olx.source.ClusterOptions;
+import olx.source.MapQuestOptions;
+import olx.source.StamenOptions;
+import olx.source.VectorOptions;
+import olx.layer.*;
 import ol.style.*;
-import ol.MapOptions;
+import olx.MapOptions;
+import olx.style.*;
 
 /**
  * @author Dan Moldovan
@@ -18,9 +23,9 @@ public class ClusteringExample implements Example {
     public void show() {
 
         // create a MapQuest-layer
-        LayerOptions mapQuestLayerOptions = OLFactory.createLayerOptions();
+        LayerOptions mapQuestLayerOptions = OLFactory.createOptions();
         
-        MapQuestOptions mapQuestOptions = OLFactory.createMapQuestOptions();
+        MapQuestOptions mapQuestOptions = OLFactory.createOptions();
         mapQuestOptions.setLayer("hyb");
 
         MapQuest mapQuestSource = OLFactory.createMapQuestSource(mapQuestOptions);
@@ -29,11 +34,11 @@ public class ClusteringExample implements Example {
 
         Tile mapQuestLayer = OLFactory.createTileLayer(mapQuestLayerOptions);
 
-        LayerOptions stamenLayerOptions = OLFactory.createLayerOptions();
+        LayerOptions stamenLayerOptions = OLFactory.createOptions();
         
         
 
-        StamenOptions stamenOptions = OLFactory.createStamenOptions();
+        StamenOptions stamenOptions = OLFactory.createOptions();
 
         stamenOptions.setLayer("watercolor");
         Stamen stamenSource = OLFactory.createStamenSource(stamenOptions);
@@ -50,7 +55,7 @@ public class ClusteringExample implements Example {
         view.setZoom(2);
 
         // create the map
-        MapOptions mapOptions = OLFactory.createMapOptions();
+        MapOptions mapOptions = OLFactory.createOptions();
         mapOptions.setTarget("mapClustering");
         mapOptions.setView(view);
 
@@ -94,14 +99,14 @@ public class ClusteringExample implements Example {
 
         map.getLayers().push(stamenLayer);
 
-        VectorOptions vectorOptions = OLFactory.createVectorSourceOptions();
+        VectorOptions vectorOptions = OLFactory.createOptions();
         vectorOptions.setFeatures(features);
         ol.source.Vector vectorSource = OLFactory.createVectorSource(vectorOptions);
 
 
 
 
-        ClusterOptions clusterOptions = OLFactory.createClusterOptions();
+        ClusterOptions clusterOptions = OLFactory.createOptions();
         clusterOptions.setDistance((double) 40);
         clusterOptions.setSource(vectorSource);
 
@@ -110,7 +115,7 @@ public class ClusteringExample implements Example {
 
 
 
-        ol.layer.VectorOptions vectorLayerOptions = OLFactory.createVectorLayerOptions();
+        olx.layer.VectorOptions vectorLayerOptions = OLFactory.createOptions();
 
 
 
@@ -120,14 +125,14 @@ public class ClusteringExample implements Example {
                 int size = ((Feature[])feature.get("features")).length;
 
 
-                StyleOptions styleOptions = OLFactory.createStyleOptions();
-                CircleOptions circleOptions = OLFactory.createCircleOptions();
+                StyleOptions styleOptions = OLFactory.createOptions();
+                CircleOptions circleOptions = OLFactory.createOptions();
                 circleOptions.setRadius(10);
-                StrokeOptions strokeOptions = OLFactory.createStrokeOptions();
+                StrokeOptions strokeOptions = OLFactory.createOptions();
                 strokeOptions.setColor("#3399CC");
                 Stroke stroke = OLFactory.createStrokeStyle(strokeOptions);
                 circleOptions.setStroke(stroke);
-                FillOptions fillOptions = OLFactory.createFillOptions();
+                FillOptions fillOptions = OLFactory.createOptions();
                 fillOptions.setColor("#3399CC");
                 Fill fill = OLFactory.createFill(fillOptions);
                 circleOptions.setFill(fill);
@@ -135,7 +140,7 @@ public class ClusteringExample implements Example {
                 ol.style.Image image = circle;
                 styleOptions.setImage(image);
 
-                TextOptions textOptions = OLFactory.createTextOptions();
+                TextOptions textOptions = OLFactory.createOptions();
                 textOptions.setText("" + size);
                 ol.style.Text text = OLFactory.createText(textOptions);
                 styleOptions.setText(text);

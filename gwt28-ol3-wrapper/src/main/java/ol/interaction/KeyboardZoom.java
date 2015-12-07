@@ -3,14 +3,10 @@ package ol.interaction;
 import jsinterop.annotations.JsType;
 
 /**
- * 
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
-public abstract class KeyboardZoom implements Interaction {
-
-    public static native KeyboardZoom getKeyboardZoom();
+public interface KeyboardZoom extends Interaction {
    
 }
 

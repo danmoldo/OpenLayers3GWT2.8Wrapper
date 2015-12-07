@@ -3,14 +3,10 @@ package ol.interaction;
 import jsinterop.annotations.JsType;
 
 /**
- * 
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
-public abstract class DragAndDrop implements Interaction {
-    
-    public static native DragAndDrop getDragAndDrop();
-    
+public interface DragAndDrop extends Interaction {
+
 }
 

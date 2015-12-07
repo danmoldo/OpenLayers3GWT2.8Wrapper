@@ -2,6 +2,7 @@ package ol.proj;
 
 import jsinterop.annotations.JsType;
 import ol.Coordinate;
+import olx.proj.ProjectionOptions;
 
 /**
  * 

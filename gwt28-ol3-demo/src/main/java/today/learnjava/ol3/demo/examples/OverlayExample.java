@@ -3,9 +3,13 @@ package today.learnjava.ol3.demo.examples;
 import com.google.gwt.dom.client.Document;
 import ol.*;
 import ol.event.ListenerFunction;
-import ol.layer.LayerOptions;
+import olx.MapOptions;
+import olx.OverlayOptions;
+import olx.layer.LayerOptions;
 import ol.layer.Tile;
 import ol.source.*;
+import olx.source.MapQuestOptions;
+import olx.source.StamenOptions;
 
 /**
  * @author Dan Moldovan
@@ -15,9 +19,9 @@ public class OverlayExample implements Example {
     public void show() {
 
         // create a MapQuest-layer
-        LayerOptions mapQuestLayerOptions = OLFactory.createLayerOptions();
+        LayerOptions mapQuestLayerOptions = OLFactory.createOptions();
 
-        MapQuestOptions mapQuestOptions = OLFactory.createMapQuestOptions();
+        MapQuestOptions mapQuestOptions = OLFactory.createOptions();
         mapQuestOptions.setLayer("hyb");
 
         MapQuest mapQuestSource = OLFactory.createMapQuestSource(mapQuestOptions);
@@ -26,11 +30,11 @@ public class OverlayExample implements Example {
 
         Tile mapQuestLayer = OLFactory.createTileLayer(mapQuestLayerOptions);
 
-        LayerOptions stamenLayerOptions = OLFactory.createLayerOptions();
+        LayerOptions stamenLayerOptions = OLFactory.createOptions();
 
 
         // create a Stamen-layer
-        StamenOptions stamenOptions = OLFactory.createStamenOptions();
+        StamenOptions stamenOptions = OLFactory.createOptions();
 
         stamenOptions.setLayer("watercolor");
         Stamen stamenSource = OLFactory.createStamenSource(stamenOptions);
@@ -47,7 +51,7 @@ public class OverlayExample implements Example {
         view.setZoom(5);
 
         // create the map
-        MapOptions mapOptions = OLFactory.createMapOptions();
+        MapOptions mapOptions = OLFactory.createOptions();
         mapOptions.setTarget("mapOverlay");
         mapOptions.setView(view);
 
@@ -73,21 +77,21 @@ public class OverlayExample implements Example {
 
 
 
-        OverlayOptions overlayOptions = OLFactory.createOverlayOptions();
+        OverlayOptions overlayOptions = OLFactory.createOptions();
         overlayOptions.setElement(Document.get().getElementById("marker"));
         overlayOptions.setPosition(OLFactory.createCoordinateFromLonLat(16.3725, 48.208889));
         overlayOptions.setPositioning("center-right");
         Overlay overlay = OLFactory.createOverlay(overlayOptions);
         map.addOverlay(overlay);
 
-        overlayOptions = OLFactory.createOverlayOptions();
+        overlayOptions = OLFactory.createOptions();
         overlayOptions.setElement(Document.get().getElementById("vienna"));
         overlayOptions.setPosition(OLFactory.createCoordinateFromLonLat(16.3725, 48.208889));
         overlayOptions.setPositioning("center-left");
         overlay = OLFactory.createOverlay(overlayOptions);
         map.addOverlay(overlay);
 
-        overlayOptions = OLFactory.createOverlayOptions();
+        overlayOptions = OLFactory.createOptions();
         overlayOptions.setElement(Document.get().getElementById("popup"));
         overlayOptions.setId("ovPop");
         overlay = OLFactory.createOverlay(overlayOptions);

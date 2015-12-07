@@ -2,12 +2,13 @@ package today.learnjava.ol3.demo.examples;
 
 import ol.*;
 import ol.control.Attribution;
-import ol.layer.LayerOptions;
+import olx.MapOptions;
+import olx.layer.LayerOptions;
 import ol.layer.Tile;
 import ol.source.Osm;
 import ol.source.TileDebug;
-import ol.source.TileDebugOptions;
-import ol.source.XyzOptions;
+import olx.source.TileDebugOptions;
+import olx.source.XyzOptions;
 
 /**
  * @author Dan Moldovan
@@ -20,7 +21,7 @@ public class OsmExample implements Example {
         XyzOptions osmSourceOptions = OLFactory.createOptions();
 
         Osm osmSource = OLFactory.createOsm(osmSourceOptions);
-        LayerOptions osmLayerOptions = OLFactory.createLayerOptions();
+        LayerOptions osmLayerOptions = OLFactory.createOptions();
         osmLayerOptions.setSource(osmSource);
 
         Tile osmLayer = OLFactory.createTileLayer(osmLayerOptions);
@@ -32,7 +33,7 @@ public class OsmExample implements Example {
 
         TileDebug tileDebugSource = OLFactory.createTileDebug(tileDebugOptions);
 
-        LayerOptions tileDebugLayerOptions = OLFactory.createLayerOptions();
+        LayerOptions tileDebugLayerOptions = OLFactory.createOptions();
 
         tileDebugLayerOptions.setSource(tileDebugSource);
 
@@ -48,7 +49,7 @@ public class OsmExample implements Example {
         view.setZoom(10);
 
         // create the map
-        MapOptions mapOptions = OLFactory.createMapOptions();
+        MapOptions mapOptions = OLFactory.createOptions();
         mapOptions.setTarget("mapOsm");
         mapOptions.setView(view);
 

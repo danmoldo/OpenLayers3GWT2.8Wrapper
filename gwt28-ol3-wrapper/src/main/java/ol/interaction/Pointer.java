@@ -3,9 +3,7 @@ package ol.interaction;
 import jsinterop.annotations.JsType;
 
 /**
- * 
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
 public interface Pointer extends Interaction {
