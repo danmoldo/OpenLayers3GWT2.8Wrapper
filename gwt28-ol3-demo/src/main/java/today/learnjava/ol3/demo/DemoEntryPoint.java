@@ -14,6 +14,7 @@ public class DemoEntryPoint implements EntryPoint {
         ExampleFactory.OsmExample.getExample().show();
         ExampleFactory.ClusteringExample.getExample().show();
         ExampleFactory.DragAndDropShapesExample.getExample().show();
+        ExampleFactory.HeatmapExample.getExample().show();
 
     }
     

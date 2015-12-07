@@ -8,12 +8,14 @@ import ol.control.ZoomSlider;
 import ol.control.ZoomToExtent;
 import ol.geom.*;
 import ol.interaction.*;
+import ol.layer.Heatmap;
 import ol.layer.Image;
 import ol.layer.Tile;
 import ol.proj.Projection;
 import olx.MapOptions;
 import olx.OverlayOptions;
 import olx.ViewOptions;
+import olx.format.KMLOptions;
 import olx.proj.ProjectionOptions;
 import ol.source.*;
 import olx.source.*;
@@ -66,6 +68,10 @@ public class OLFactory {
         return new $wnd.ol.format.GeoJSON();
     }-*/;
 
+    public static native ol.format.KML createKMLFormat(KMLOptions kmlOptions) /*-{
+        return new $wnd.ol.format.KML(kmlOptions);
+    }-*/;
+
     /** Geom **/
 
     public static native Point createPointGeom(double[] coordinates) /*-{
@@ -103,6 +109,10 @@ public class OLFactory {
     }-*/;
 
     /** Layers **/
+
+    public static native Heatmap createHeatmapLayer(LayerOptions layerOptions) /*-{
+        return new $wnd.ol.layer.Heatmap(layerOptions);
+    }-*/;
 
     public static native Image createImageLayer(LayerOptions layerOptions) /*-{
         return new $wnd.ol.layer.Image(layerOptions);
