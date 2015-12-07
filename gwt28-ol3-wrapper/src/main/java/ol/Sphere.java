@@ -1,12 +1,10 @@
-package ol.event;
+package ol;
 
 import jsinterop.annotations.JsType;
 
 /**
-*
-* @author DanMo
-*
-*/
+ * Created by DanMo
+ */
 @JsType(isNative = true)
-public interface Event {}
-
+public interface Sphere {
+}

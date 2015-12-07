@@ -1,19 +1,28 @@
 package ol.geom;
 
+import jsinterop.annotations.JsMethod;
 import jsinterop.annotations.JsType;
 
-import ol.Observable;
+import ol.*;
+import ol.proj.Projection;
 
 /**
- * Base for vector geometries.
- *
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
-public interface Geometry extends Observable {
+public interface Geometry extends ol.Object {
 
-    Geometry clone();
+    @JsMethod
+    Coordinate getClosestPoint(Coordinate point);
+
+    @JsMethod
+    Extent getExtent();
+
+    @JsMethod
+    Geometry simplify(double tolerance);
+
+    @JsMethod
+    Geometry transform(Projection source, Projection destination);
 
 }
 

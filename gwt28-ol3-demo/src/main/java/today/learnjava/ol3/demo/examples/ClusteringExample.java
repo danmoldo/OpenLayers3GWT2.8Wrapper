@@ -85,7 +85,7 @@ public class ClusteringExample implements Example {
         for (int i = 0; i < count; ++i) {
             double[] coordinates = OLFactory.createCoordinate(2 * e * Math.random() - e, 2 * e * Math.random() - e);
 
-            Point point = OLFactory.createPoint(coordinates);
+            Point point = OLFactory.createPointGeom(coordinates);
 
             Feature feature = OLFactory.createFeature();
             feature.setGeometry(point);

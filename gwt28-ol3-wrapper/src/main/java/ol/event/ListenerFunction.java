@@ -5,7 +5,7 @@ import jsinterop.annotations.JsFunction;
 import ol.MapBrowserEvent;
 
 /**
- * Created by DanMo on 26.11.2015.
+ * @author Dan Moldovan
  */
 
 @FunctionalInterface

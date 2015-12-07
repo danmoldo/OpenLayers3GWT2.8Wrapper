@@ -6,8 +6,7 @@ import ol.control.Rotate;
 import ol.control.ScaleLine;
 import ol.control.ZoomSlider;
 import ol.control.ZoomToExtent;
-import ol.geom.GeometryLayout;
-import ol.geom.Point;
+import ol.geom.*;
 import ol.interaction.DragAndDrop;
 import ol.interaction.KeyboardPan;
 import ol.interaction.KeyboardZoom;
@@ -21,6 +20,7 @@ import ol.source.*;
 import ol.source.Vector;
 import ol.source.VectorOptions;
 import ol.style.*;
+import ol.style.Circle;
 import ol.style.ImageOptions;
 
 /**
@@ -58,6 +58,16 @@ public class OLFactory {
 
     public static native ZoomToExtent createZoomToExtentControl() /*-{
         return new $wnd.ol.control.ZoomToExtent();
+    }-*/;
+
+    /** Geom **/
+
+    public static native Point createPointGeom(double[] coordinates) /*-{
+        return new $wnd.ol.geom.Point(coordinates);
+    }-*/;
+
+    public static native ol.geom.Circle createCircleGeom(double[] coordinates) /*-{
+        return new $wnd.ol.geom.Circle(coordinates);
     }-*/;
 
     /** Map **/
@@ -195,15 +205,6 @@ public class OLFactory {
 
     public static native KeyboardZoom createKeyboardZoom() /*-{
         return new $wnd.ol.interaction.KeyboardZoom();
-    }-*/;
-
-
-    public static native Point createPoint(double[] coordinates) /*-{
-        return new $wnd.ol.geom.Point(coordinates);
-    }-*/;
-
-    public static native GeometryLayout createGeometryLayout() /*-{
-        return new $wnd.ol.geom.GeometryLayout();
     }-*/;
 
     public static native Feature createFeature() /*-{
