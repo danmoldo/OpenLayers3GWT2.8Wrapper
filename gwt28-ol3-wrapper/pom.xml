@@ -48,29 +48,8 @@
           <include>**/*.js</include>
         </includes>
       </resource>
-      <resource>
-        <filtering>false</filtering>
-        <directory>${basedir}/src/test/java</directory>
-        <includes>
-          <include>**/*.java</include>
-          <include>**/*.xml</include>
-          <include>**/*.js</include>
-        </includes>
-      </resource>
     </resources>
     <plugins>
-      <plugin>
-		<artifactId>maven-surefire-plugin</artifactId>
-		<version>2.4.3</version>
-		<configuration>
-        <excludes>
-			<!-- todo rename *Test.java to *GwtTest.java in the project -->
-			<exclude>**/*Test.java</exclude>
-			<exclude>**/*TestCase.java</exclude>
-        </excludes>
-        </configuration>
-	  </plugin>
-      <!-- Copy static web files before executing gwt:run -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -80,30 +59,6 @@
           <target>1.5</target>
         </configuration>
       </plugin>
-	<plugin>
-		<groupId>org.codehaus.mojo</groupId>
-		<artifactId>gwt-maven-plugin</artifactId>
-		<version>${gwt.maven.plugin.version}</version>
-		<configuration>
-			<inplace>true</inplace>
-			<!--<gwtVersion>${gwtVersion}</gwtVersion>-->
-			<!--<sourceLevel>1.6</sourceLevel>-->
-			<extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs>
-			<!--<includes>**/*TestSuite.java</includes>-->
-            <mode>htmlunit</mode>
-            <!--<jsInteropMode>JS</jsInteropMode>-->
-            <productionMode>true</productionMode>
-            <webMode>true</webMode>
-		</configuration>
-		<executions>
-			<execution>
-				<id>test</id>
-				<goals>
-					<goal>test</goal>
-				</goals>
-			</execution>
-		</executions>
-	</plugin>
     </plugins>
   </build>
 

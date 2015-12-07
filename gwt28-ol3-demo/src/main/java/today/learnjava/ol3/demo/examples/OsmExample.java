@@ -10,13 +10,10 @@ import ol.source.TileDebugOptions;
 import ol.source.XyzOptions;
 
 /**
- * 
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 public class OsmExample implements Example {
 
-    @Override
     public void show() {
         
         // create a OSM-layer

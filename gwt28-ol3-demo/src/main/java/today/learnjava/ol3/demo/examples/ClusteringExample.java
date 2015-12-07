@@ -11,17 +11,10 @@ import ol.style.*;
 import ol.MapOptions;
 
 /**
- * Example with Tile-layers.
- * 
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 public class ClusteringExample implements Example {
 
-    /* (non-Javadoc)
-     * @see Example#show()
-     */
-    @Override
     public void show() {
 
         // create a MapQuest-layer

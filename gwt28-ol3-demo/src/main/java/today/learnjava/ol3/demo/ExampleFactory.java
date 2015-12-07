@@ -3,10 +3,7 @@ package today.learnjava.ol3.demo;
 import today.learnjava.ol3.demo.examples.*;
 
 /**
- * Provided example types.
- *
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 public enum ExampleFactory {
 

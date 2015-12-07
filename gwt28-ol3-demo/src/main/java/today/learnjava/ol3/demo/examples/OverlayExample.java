@@ -8,7 +8,7 @@ import ol.layer.Tile;
 import ol.source.*;
 
 /**
- * Created by DanMo on 24.11.2015.
+ * @author Dan Moldovan
  */
 public class OverlayExample implements Example {
 

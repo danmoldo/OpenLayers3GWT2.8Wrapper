@@ -3,9 +3,7 @@ package today.learnjava.ol3.demo;
 import com.google.gwt.core.client.EntryPoint;
 
 /**
- *
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 public class DemoEntryPoint implements EntryPoint {
 
