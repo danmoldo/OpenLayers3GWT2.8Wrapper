@@ -60,6 +60,12 @@ public class OLFactory {
         return new $wnd.ol.control.ZoomToExtent();
     }-*/;
 
+    /** Formats **/
+
+    public static native ol.format.GeoJSON createGeoJSONFormat() /*-{
+        return new $wnd.ol.format.GeoJSON();
+    }-*/;
+
     /** Geom **/
 
     public static native Point createPointGeom(double[] coordinates) /*-{
@@ -96,62 +102,66 @@ public class OLFactory {
         return new $wnd.ol.interaction.Translate(translateOptions);
     }-*/;
 
-    /** Map **/
-
-    public static native Map createMap(MapOptions mapOptions) /*-{
-		return new $wnd.ol.Map(mapOptions);
-    }-*/;
-
     /** Layers **/
 
     public static native Image createImageLayer(LayerOptions layerOptions) /*-{
         return new $wnd.ol.layer.Image(layerOptions);
     }-*/;
-    
+
     public static native Tile createTileLayer(LayerOptions layerOptions) /*-{
-		return new $wnd.ol.layer.Tile(layerOptions);
+        return new $wnd.ol.layer.Tile(layerOptions);
+    }-*/;
+
+    public static native ol.layer.Vector createVectorLayer(olx.layer.VectorOptions vectorOptions) /*-{
+        return new $wnd.ol.layer.Vector(vectorOptions);
     }-*/;
 
     /** Sources **/
 
     public static native ImageStatic createImageStaticSource(ImageStaticOptions imageStaticOptions) /*-{
-		return new $wnd.ol.source.ImageStatic(imageStaticOptions);
-	}-*/;
-    
+        return new $wnd.ol.source.ImageStatic(imageStaticOptions);
+    }-*/;
+
     public static native ImageWMS createImageWMSSource(ImageWMSOptions imageWMSOptions) /*-{
         return new $wnd.ol.source.ImageWMS(imageWMSOptions);
     }-*/;
-    
+
     public static native MapQuest createMapQuestSource(MapQuestOptions mapQuestOptions) /*-{
-		return new $wnd.ol.source.MapQuest(mapQuestOptions);
+        return new $wnd.ol.source.MapQuest(mapQuestOptions);
     }-*/;
 
     public static native Stamen createStamenSource(StamenOptions stamenOptions) /*-{
         return new $wnd.ol.source.Stamen(stamenOptions);
     }-*/;
-    
+
     public static native Xyz createXyz(XyzOptions xyzOptions) /*-{
-		return new $wnd.ol.source.XYZ(xyzOptions);
-	}-*/;
+        return new $wnd.ol.source.XYZ(xyzOptions);
+    }-*/;
 
     public static native BingMaps createBingMaps(BingMapsOptions bingMapsOptions) /*-{
         return new $wnd.ol.source.BingMaps(bingMapsOptions);
     }-*/;
 
+    public static native ol.source.Vector createVectorSource(VectorOptions vectorOptions) /*-{
+        return new $wnd.ol.source.Vector(vectorOptions);
+    }-*/;
+
+    public static native ol.source.Cluster createClusterSource(ClusterOptions clusterOptions) /*-{
+        return new $wnd.ol.source.Cluster(clusterOptions);
+    }-*/;
+
+    public static native TileDebug createTileDebug(TileDebugOptions tileDebugOptions) /*-{
+        return new $wnd.ol.source.TileDebug(tileDebugOptions);
+    }-*/;
+
+    public static native Osm createOsm(XyzOptions osmOptions) /*-{
+        return new $wnd.ol.source.OSM(osmOptions);
+    }-*/;
+
     /** Projection **/
-    
+
     public static native Projection createProjection(ProjectionOptions projectionOptions) /*-{
         return new $wnd.ol.proj.Projection(projectionOptions);
-    }-*/;
-    
-    /** View **/
-
-    public static native View createView() /*-{
-		return new $wnd.ol.View();
-    }-*/;
-    
-    public static native View createView(ViewOptions viewOptions) /*-{
-        return new $wnd.ol.View(viewOptions);
     }-*/;
 
     /** Style **/
@@ -179,71 +189,46 @@ public class OLFactory {
         return new $wnd.ol.style.Text(textOptions);
     }-*/;
 
+    public static native ol.style.StyleFunction createStyleFunction() /*-{
+        return new $wnd.ol.style.StyleFunction();
+    }-*/;
+
+    /** Main objects **/
+
+    public static native Map createMap(MapOptions mapOptions) /*-{
+        return new $wnd.ol.Map(mapOptions);
+    }-*/;
+
+    public static native View createView() /*-{
+        return new $wnd.ol.View();
+    }-*/;
+
+    public static native View createView(ViewOptions viewOptions) /*-{
+        return new $wnd.ol.View(viewOptions);
+    }-*/;
+
     public static native Feature createFeature() /*-{
         return new $wnd.ol.Feature();
-    }-*/;
-
-    public static native ol.layer.Vector createVectorLayer(olx.layer.VectorOptions vectorOptions) /*-{
-        return new $wnd.ol.layer.Vector(vectorOptions);
-    }-*/;
-
-    public static native ol.source.Vector createVectorSource(VectorOptions vectorOptions) /*-{
-        return new $wnd.ol.source.Vector(vectorOptions);
-    }-*/;
-
-    public static native ol.source.Cluster createClusterSource(ClusterOptions clusterOptions) /*-{
-        return new $wnd.ol.source.Cluster(clusterOptions);
-    }-*/;
-
-     public static native TileDebug createTileDebug(TileDebugOptions tileDebugOptions) /*-{
-        return new $wnd.ol.source.TileDebug(tileDebugOptions);
-    }-*/;
-
-    public static native Osm createOsm(XyzOptions osmOptions) /*-{
-        return new $wnd.ol.source.OSM(osmOptions);
     }-*/;
 
     public static native ol.Overlay createOverlay(OverlayOptions overlayOptions) /*-{
         return new $wnd.ol.Overlay(overlayOptions);
     }-*/;
 
-    public static native ol.style.StyleFunction createStyleFunction() /*-{
-        return new $wnd.ol.style.StyleFunction();
-    }-*/;
+    /** Utils **/
 
-    public static native ol.format.GeoJSON createGeoJSONFormat() /*-{
-        return new $wnd.ol.format.GeoJSON();
-    }-*/;
-
-    /** Common **/
-
-    /**
-     * Creates a common object for options.
-     *
-     * @return common options object
-     */
     public static native <T> T createOptions() /*-{
         return {};
     }-*/;
-    
-    /**
-     * Creates a common object for params.
-     *
-     * @return common params object
-     */
+
     public static native <T> T createParams() /*-{
         return {};
     }-*/;
-    
+
     public static native <T> Collection<T> createCollection() /*-{
         return new $wnd.ol.Collection();
-    }-*/; 
-    
-    /**
-     * Creates a coordinate.
-     *
-     * @return coordParams coordinate params
-     */
+    }-*/;
+
     public static double[] createCoordinate(double... coordParams) {
         return coordParams;
     };
@@ -252,27 +237,10 @@ public class OLFactory {
         return new $wnd.ol.proj.fromLonLat([x,y]);
     }-*/;
 
-    //return new $wnd.ol.proj.transform([x,y], 'EPSG:4326', 'EPSG:3857');
-    /**
-     * Creates an extent.
-     * 
-     * @param minX
-     * @param minY
-     * @param maxX
-     * @param maxY
-     * @return
-     */
     public static native double[] createExtent(double minX, double minY, double maxX, double maxY) /*-{
         return [minX, minY, maxX, maxY];
-	}-*/;
-    
-    /**
-     * Creates a size
-     * 
-     * @param width
-     * @param height
-     * @return size
-     */
+    }-*/;
+
     public static native int[] createSize(int width, int height) /*-{
         return [width, height];
     }-*/;

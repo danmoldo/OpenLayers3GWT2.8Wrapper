@@ -1,45 +1,41 @@
 package ol.layer;
 
+import jsinterop.annotations.JsMethod;
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
+import ol.Extent;
 import ol.Object;
 
 /**
- * Base for OL3-Layers.
- *
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
 public interface Base extends Object {
 
-    float getBrightness();
+    Extent getExtent();
 
-    void setBrightness(float brightness);
+    double getMaxResolution();
 
-    float getContrast();
+    double getMinResolution();
 
-    void setContrast(float contrast);
-
-    float getMaxResolution();
-
-    void setMaxResolution(float maxResolution);
-
-    float getMinResolution();
-
-    void setMinResolution(float minResolution);
-
-    float getOpacity();
-
-    void setOpacity(float opacity);
-
-    float getSaturation();
-
-    void setSaturation(float saturation);
+    double getOpacity();
 
     boolean getVisible();
 
+    double getZIndex();
+
+    void setExtent(Extent extent);
+
+    void setMaxResolution(double maxResolution);
+
+    void setMinResolution(double minResolution);
+
+    void setOpacity(double opacity);
+
     void setVisible(boolean visible);
+
+    void setZIndex(double visible);
 
 }
 

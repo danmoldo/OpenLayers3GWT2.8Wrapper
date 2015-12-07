@@ -1,10 +1,17 @@
 package ol.layer;
 
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
+import ol.Collection;
 
 /**
- * Created by DanMo on 20.11.2015.
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
-public interface Group {
+public interface Group extends Base {
+
+    Collection<Base> getLayers();
+
+    void setLayers(Collection<Base> layers);
+
 }
