@@ -3,7 +3,7 @@ package ol;
 import jsinterop.annotations.JsType;
 
 /**
- * Created by DanMo on 20.11.2015.
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
 public interface Pixel {

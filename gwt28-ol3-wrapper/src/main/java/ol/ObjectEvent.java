@@ -6,5 +6,7 @@ import jsinterop.annotations.JsType;
  * @author Dan Moldovan
  */
 @JsType(isNative = true)
-public interface Extent {
+public interface ObjectEvent extends goog.events.Event {
+
+
 }

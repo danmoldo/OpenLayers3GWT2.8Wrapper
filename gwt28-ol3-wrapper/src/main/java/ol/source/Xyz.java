@@ -3,9 +3,7 @@ package ol.source;
 import jsinterop.annotations.JsType;
 
 /**
- * 
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
 public interface Xyz extends TileImage {

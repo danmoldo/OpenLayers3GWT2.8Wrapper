@@ -13,8 +13,6 @@ import ol.layer.Base;
 import ol.layer.Group;
 
 /**
- * Map with controls, layers, overlays and interactions.
- *
  * @author Dan Moldovan
  */
 @JsType(isNative = true)

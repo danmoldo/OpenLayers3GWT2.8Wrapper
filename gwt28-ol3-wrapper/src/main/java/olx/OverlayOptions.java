@@ -6,7 +6,7 @@ import jsinterop.annotations.JsType;
 import ol.Coordinate;
 
 /**
- * Created by DanMo on 24.11.2015.
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
 public interface OverlayOptions {

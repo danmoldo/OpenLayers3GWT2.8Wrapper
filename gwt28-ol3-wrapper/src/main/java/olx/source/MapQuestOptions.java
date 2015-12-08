@@ -5,17 +5,11 @@ import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 /**
- * 
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
 public interface MapQuestOptions {
-    
-    /**
-     * 
-     * @param layer osm, sat, hyb
-     */
+
     @JsProperty
     void setLayer(String layer);
     

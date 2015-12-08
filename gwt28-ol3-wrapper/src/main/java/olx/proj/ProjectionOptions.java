@@ -5,7 +5,7 @@ import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 /**
- * @author DanMo
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
 public interface ProjectionOptions {

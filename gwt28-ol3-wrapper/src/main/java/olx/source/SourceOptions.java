@@ -6,7 +6,7 @@ import jsinterop.annotations.JsType;
 import ol.Attribution;
 
 /**
- * @author DanMo
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
 public interface SourceOptions {

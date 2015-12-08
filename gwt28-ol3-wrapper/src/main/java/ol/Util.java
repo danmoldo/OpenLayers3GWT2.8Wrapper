@@ -4,7 +4,7 @@ import com.google.gwt.dom.client.Element;
 import com.google.gwt.user.client.Event;
 
 /**
- * Created by DanMo on 25.11.2015.
+ * @author Dan Moldovan
  */
 public class Util {
 

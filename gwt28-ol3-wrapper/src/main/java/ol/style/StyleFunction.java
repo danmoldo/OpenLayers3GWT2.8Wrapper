@@ -9,9 +9,8 @@ import ol.MapBrowserEvent;
 import ol.OLFactory;
 
 /**
- * Created by DanMo on 18.11.2015.
+ * @author Dan Moldovan
  */
-
 @FunctionalInterface
 @JsFunction
 public interface StyleFunction {

@@ -6,7 +6,7 @@ import ol.Collection;
 import ol.Feature;
 
 /**
- * Created by DanMo on 27.11.2015.
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
 public interface TranslateOptions {

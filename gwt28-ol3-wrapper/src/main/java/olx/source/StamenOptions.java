@@ -5,17 +5,11 @@ import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 /**
- * 
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
 public interface StamenOptions {
-    
-    /**
-     * 
-     * @param layerName watercolor, toner
-     */
+
     @JsProperty
     void setLayer(String layerName);
     

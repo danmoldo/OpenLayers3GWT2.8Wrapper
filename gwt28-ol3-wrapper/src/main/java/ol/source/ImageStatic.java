@@ -6,7 +6,7 @@ import ol.control.Attribution;
 
 /**
  * 
- * @author DanMo
+ * @author Dan Moldovan
  *
  */
 @JsType(isNative = true)

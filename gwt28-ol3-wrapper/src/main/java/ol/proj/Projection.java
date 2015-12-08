@@ -5,9 +5,7 @@ import ol.Coordinate;
 import olx.proj.ProjectionOptions;
 
 /**
- * 
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
 public abstract class Projection {

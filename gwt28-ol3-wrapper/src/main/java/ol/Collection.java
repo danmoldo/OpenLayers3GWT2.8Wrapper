@@ -3,9 +3,7 @@ package ol;
 import jsinterop.annotations.JsType;
 
 /**
- * 
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
 public abstract class Collection<T> implements Object {

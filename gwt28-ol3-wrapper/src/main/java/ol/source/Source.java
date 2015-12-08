@@ -4,9 +4,7 @@ import jsinterop.annotations.JsType;
 import ol.*;
 
 /**
- * 
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
 public interface Source extends ol.Object{

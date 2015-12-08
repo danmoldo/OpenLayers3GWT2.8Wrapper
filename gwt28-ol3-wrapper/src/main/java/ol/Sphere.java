@@ -3,7 +3,7 @@ package ol;
 import jsinterop.annotations.JsType;
 
 /**
- * Created by DanMo
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
 public interface Sphere {

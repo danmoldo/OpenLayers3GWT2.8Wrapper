@@ -6,18 +6,18 @@ import ol.Attribution;
 
 
 /**
- * Options for {@link Attribution}.
- * 
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
-public abstract class AttributionOptions {
+public interface AttributionOptions {
 
-    public static native AttributionOptions getAttributionOptions();
+    AttributionOptions getAttributionOptions();
 
     @JsProperty
-    public String html;
+    String getHtml();
+
+    @JsProperty
+    void setHtml(String html);
 
 
 }

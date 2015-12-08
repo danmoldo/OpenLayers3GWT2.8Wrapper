@@ -4,9 +4,7 @@ import jsinterop.annotations.JsType;
 import olx.tilegrid.TileGridOptions;
 
 /**
- * 
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
 public abstract class TileGrid {

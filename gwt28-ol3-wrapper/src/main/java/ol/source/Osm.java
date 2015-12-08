@@ -3,13 +3,10 @@ package ol.source;
 import jsinterop.annotations.JsType;
 
 /**
- * Source for OSM layer.
- * 
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
-public abstract class Osm implements Xyz {
+public interface Osm extends Xyz {
     
 }
 

@@ -12,6 +12,7 @@ import ol.layer.Heatmap;
 import ol.layer.Image;
 import ol.layer.Tile;
 import ol.proj.Projection;
+import olx.AttributionOptions;
 import olx.MapOptions;
 import olx.OverlayOptions;
 import olx.ViewOptions;
@@ -26,9 +27,7 @@ import olx.interaction.TranslateOptions;
 import olx.layer.LayerOptions;
 
 /**
- *
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 public class OLFactory {
 
@@ -204,6 +203,14 @@ public class OLFactory {
     }-*/;
 
     /** Main objects **/
+
+    public static native Attribution createAttributions(AttributionOptions attributionOptions) /*-{
+        return new $wnd.ol.Attribution(attributionOptions);
+    }-*/;
+
+    public static native Graticule createGraticule() /*-{
+        return new $wnd.ol.Graticule();
+    }-*/;
 
     public static native Map createMap(MapOptions mapOptions) /*-{
         return new $wnd.ol.Map(mapOptions);

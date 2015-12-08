@@ -6,7 +6,7 @@ import jsinterop.annotations.JsType;
 import ol.proj.Projection;
 
 /**
- * @author DanMo
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
 public interface ImageStaticOptions extends SourceOptions {

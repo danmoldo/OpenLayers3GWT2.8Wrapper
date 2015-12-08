@@ -3,12 +3,10 @@ package ol.source;
 import jsinterop.annotations.JsType;
 
 /**
- * 
- * @author DanMo
- *
+ * @author Dan Moldovan
  */
 @JsType(isNative = true)
-public abstract class TileDebug implements Tile {
+public interface TileDebug extends Tile {
     
 }
 

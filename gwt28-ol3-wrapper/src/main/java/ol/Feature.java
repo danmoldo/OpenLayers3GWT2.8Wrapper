@@ -8,9 +8,7 @@ import ol.style.Style;
 import ol.style.StyleFunction;
 
 /**
- * 
  * @author Dan Moldovan
- *
  */
 @JsType(isNative = true)
 public interface Feature extends Object {
