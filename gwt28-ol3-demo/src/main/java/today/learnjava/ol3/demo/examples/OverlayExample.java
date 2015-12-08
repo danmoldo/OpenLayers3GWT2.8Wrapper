@@ -102,9 +102,7 @@ public class OverlayExample implements Example {
 
         map.on("click", new ListenerFunction() {
             public void exec(MapBrowserEvent event) {
-
                 Util.showPopup(overlayFinal, event.getCoordinate());
-
             }
         });
 

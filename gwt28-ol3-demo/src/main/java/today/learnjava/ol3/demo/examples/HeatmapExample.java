@@ -1,5 +1,13 @@
 package today.learnjava.ol3.demo.examples;
 
+import com.google.gwt.dom.client.Document;
+import com.google.gwt.dom.client.Element;
+import com.google.gwt.dom.client.InputElement;
+import com.google.gwt.user.client.DOM;
+import com.google.gwt.user.client.Event;
+import com.google.gwt.user.client.EventListener;
+import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.impl.DOMImpl;
 import ol.Coordinate;
 import ol.Map;
 import ol.OLFactory;
@@ -26,7 +34,7 @@ public class HeatmapExample implements Example {
         View view = OLFactory.createView();
         Coordinate centerCoordinate = OLFactory.createCoordinateFromLonLat(16.3725, 48.208889);
         view.setCenter(centerCoordinate);
-        view.setZoom(10);
+        view.setZoom(4);
 
         // create the map
         MapOptions mapOptions = OLFactory.createOptions();
@@ -61,12 +69,31 @@ public class HeatmapExample implements Example {
         vectorOptions.setFormat(OLFactory.createKMLFormat(kmlOptions));
         ol.source.Vector vector = OLFactory.createVectorSource(vectorOptions);
         heatmapOptions.setSource(vector);
-        Heatmap heatmap = OLFactory.createHeatmapLayer(heatmapOptions);
+        final Heatmap heatmap = OLFactory.createHeatmapLayer(heatmapOptions);
         heatmap.setBlur(10);
-        heatmap.setRadius(10);
+        heatmap.setRadius(15);
 
         map.addLayer(raster);
         map.addLayer(heatmap);
+
+        final Element radius = Document.get().getElementById("radius");
+        Event.sinkEvents(radius, Event.ONMOUSEMOVE);
+        Event.setEventListener(radius, new EventListener() {
+            public void onBrowserEvent(Event event) {
+                InputElement radius = InputElement.as(Document.get().getElementById("radius"));
+                heatmap.setRadius(Double.parseDouble(radius.getValue()));
+            }
+        });
+
+        final Element blur = Document.get().getElementById("blur");
+        Event.sinkEvents(blur, Event.ONMOUSEMOVE);
+        Event.setEventListener(blur, new EventListener() {
+            public void onBrowserEvent(Event event) {
+                InputElement blur = InputElement.as(Document.get().getElementById("blur"));
+                heatmap.setBlur(Double.parseDouble(blur.getValue()));
+            }
+        });
+
     }
 
 }
