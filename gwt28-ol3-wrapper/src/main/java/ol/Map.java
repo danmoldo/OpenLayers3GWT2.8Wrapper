@@ -8,6 +8,7 @@ import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 import ol.control.Control;
+import ol.functions.FeatureLayerFunction;
 import ol.interaction.Interaction;
 import ol.layer.Base;
 import ol.layer.Group;
@@ -30,7 +31,9 @@ public interface Map extends Object {
     @JsMethod
     void addOverlay(Overlay overlay);
 
-    //TODO forEachFeatureAtPixel
+    @JsMethod
+    void forEachFeatureAtPixel(Pixel pixel, FeatureLayerFunction featureLayerFunction);
+
     //TODO forEachLayerAtPixel
 
     @JsMethod

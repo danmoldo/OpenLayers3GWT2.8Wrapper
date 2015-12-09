@@ -11,5 +11,7 @@ import jsinterop.annotations.JsType;
 @JsType(isNative = true)
 public interface Style {
 
+    Text getText();
+
 }
 

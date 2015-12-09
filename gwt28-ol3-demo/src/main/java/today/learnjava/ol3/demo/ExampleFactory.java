@@ -12,6 +12,7 @@ public enum ExampleFactory {
     BingMapsExample(new BingMapsExample()),
     DragAndDropShapesExample(new DragAndDropShapesExample()),
     HeatmapExample(new HeatmapExample()),
+    CountryVectorLayerExample(new CountryVectorLayerExample()),
     OsmExample(new OsmExample());
 
     private Example example;

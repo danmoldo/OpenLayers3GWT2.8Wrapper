@@ -5,6 +5,7 @@ import com.google.gwt.dom.client.Element;
 import com.google.gwt.dom.client.InputElement;
 import com.google.gwt.user.client.Event;
 import com.google.gwt.user.client.EventListener;
+import com.google.gwt.user.client.Window;
 import ol.Coordinate;
 import ol.Map;
 import ol.OLFactory;
@@ -72,23 +73,26 @@ public class HeatmapExample implements Example {
         map.addLayer(heatmap);
 
         final Element radius = Document.get().getElementById("radius");
-        Event.sinkEvents(radius, Event.ONMOUSEMOVE);
-        Event.setEventListener(radius, new EventListener() {
-            public void onBrowserEvent(Event event) {
-                InputElement radius = InputElement.as(Document.get().getElementById("radius"));
-                heatmap.setRadius(Double.parseDouble(radius.getValue()));
-            }
-        });
+        if (radius != null) {
+            Event.sinkEvents(radius, Event.ONMOUSEMOVE);
+            Event.setEventListener(radius, new EventListener() {
+                public void onBrowserEvent(Event event) {
+                    InputElement radius = InputElement.as(Document.get().getElementById("radius"));
+                    heatmap.setRadius(Double.parseDouble(radius.getValue()));
+                }
+            });
+        }
 
         final Element blur = Document.get().getElementById("blur");
-        Event.sinkEvents(blur, Event.ONMOUSEMOVE);
-        Event.setEventListener(blur, new EventListener() {
-            public void onBrowserEvent(Event event) {
-                InputElement blur = InputElement.as(Document.get().getElementById("blur"));
-                heatmap.setBlur(Double.parseDouble(blur.getValue()));
-            }
-        });
-
+        if (blur != null) {
+            Event.sinkEvents(blur, Event.ONMOUSEMOVE);
+            Event.setEventListener(blur, new EventListener() {
+                public void onBrowserEvent(Event event) {
+                    InputElement blur = InputElement.as(Document.get().getElementById("blur"));
+                    heatmap.setBlur(Double.parseDouble(blur.getValue()));
+                }
+            });
+        }
     }
 
 }

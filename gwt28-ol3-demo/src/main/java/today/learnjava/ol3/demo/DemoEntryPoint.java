@@ -15,6 +15,7 @@ public class DemoEntryPoint implements EntryPoint {
         ExampleFactory.ClusteringExample.getExample().show();
         ExampleFactory.DragAndDropShapesExample.getExample().show();
         ExampleFactory.HeatmapExample.getExample().show();
+        ExampleFactory.CountryVectorLayerExample.getExample().show();
 
     }
     
