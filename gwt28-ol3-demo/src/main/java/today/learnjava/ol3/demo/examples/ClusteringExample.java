@@ -121,7 +121,7 @@ public class ClusteringExample implements Example {
 
 
         vectorLayerOptions.setStyle(new StyleFunction() {
-            public void exec(Feature feature, int resolution) {
+            public Style exec(Feature feature, int resolution) {
                 int size = ((Feature[])feature.get("features")).length;
 
 
@@ -144,7 +144,9 @@ public class ClusteringExample implements Example {
                 textOptions.setText("" + size);
                 ol.style.Text text = OLFactory.createText(textOptions);
                 styleOptions.setText(text);
-                feature.setStyle(OLFactory.createStyle(styleOptions));
+                Style style = OLFactory.createStyle(styleOptions);
+                feature.setStyle(style);
+                return style;
             }
         });
 

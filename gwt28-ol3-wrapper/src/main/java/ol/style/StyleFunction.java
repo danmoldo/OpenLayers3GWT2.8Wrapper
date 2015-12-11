@@ -15,6 +15,6 @@ import ol.OLFactory;
 @JsFunction
 public interface StyleFunction {
 
-    public void exec(Feature feature, int resolution);
+    public Style exec(Feature feature, int resolution);
 
 }

@@ -1,6 +1,7 @@
 package ol;
 
 import jsinterop.annotations.JsMethod;
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 import ol.geom.Geometry;
