@@ -1,5 +1,12 @@
 package today.learnjava.ol3.demo.examples;
 
+import com.google.gwt.dom.client.Document;
+import com.google.gwt.dom.client.Element;
+import com.google.gwt.dom.client.InputElement;
+import com.google.gwt.dom.client.SelectElement;
+import com.google.gwt.user.client.Event;
+import com.google.gwt.user.client.EventListener;
+import com.google.gwt.user.client.Window;
 import ol.*;
 import ol.interaction.Draw;
 import ol.interaction.Modify;
@@ -23,6 +30,8 @@ import olx.source.StamenOptions;
  * @author Dan Moldovan
  */
 public class DrawModifyFeaturesExample implements Example {
+
+    static Draw draw;
 
     public void show() {
         LayerOptions layerOptions = OLFactory.createOptions();
@@ -55,7 +64,7 @@ public class DrawModifyFeaturesExample implements Example {
 
         // create the map
         MapOptions mapOptions = OLFactory.createOptions();
-        Map map = OLFactory.createMap(mapOptions);
+        final Map map = OLFactory.createMap(mapOptions);
 
         map.addLayer(mapQuestLayer);
         map.addLayer(stamenLayer);
@@ -69,7 +78,7 @@ public class DrawModifyFeaturesExample implements Example {
         map.addControl(OLFactory.createMousePositionControl());
         map.addControl(OLFactory.createZoomToExtentControl());
 
-        Collection<Feature> features = OLFactory.createCollection();
+        final Collection<Feature> features = OLFactory.createCollection();
         VectorOptions featureOverlayOptions = OLFactory.createOptions();
         olx.source.VectorOptions vectorSourceOptions = OLFactory.createOptions();
         vectorSourceOptions.setFeatures(features);     //Posible problem
@@ -81,8 +90,8 @@ public class DrawModifyFeaturesExample implements Example {
 
         DrawOptions drawOptions = OLFactory.createOptions();
         drawOptions.setFeatures(features);
-        drawOptions.setType("Polygon");
-        Draw draw = OLFactory.createDraw(drawOptions);
+        drawOptions.setType("Point");
+        draw = OLFactory.createDraw(drawOptions);
 
         map.addInteraction(draw);
 
@@ -91,6 +100,22 @@ public class DrawModifyFeaturesExample implements Example {
         Modify modify = OLFactory.createModify(modifyOptions);
 
         map.addInteraction(modify);
+
+        final Element geometryType = Document.get().getElementById("geometryType");
+        if (geometryType != null) {
+            Event.sinkEvents(geometryType, Event.ONCHANGE);
+            Event.setEventListener(geometryType, new EventListener() {
+                public void onBrowserEvent(Event event) {
+                    map.removeInteraction(draw);
+                    SelectElement geometryType = SelectElement.as(Document.get().getElementById("geometryType"));
+                    DrawOptions drawOptions = OLFactory.createOptions();
+                    drawOptions.setFeatures(features);
+                    drawOptions.setType(geometryType.getValue());
+                    draw = OLFactory.createDraw(drawOptions);
+                    map.addInteraction(draw);
+                }
+            });
+        }
     }
 
 }

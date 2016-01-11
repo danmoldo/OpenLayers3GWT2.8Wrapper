@@ -13,7 +13,17 @@
     <script type="text/javascript" language="javascript" src="gwt28ol3demo/gwt28ol3demo.nocache.js"></script>
 </head>
 <body>
-<div id="mapDrawModifyFeatures" class="map"></div>
+<div id="mapDrawModifyFeatures" class="map" style="height: 600px; width: 100%"></div>
+
+<form class="form-inline">
+    <label>Geometry type &nbsp;</label>
+    <select id="geometryType">
+        <option value="Point">Point</option>
+        <option value="LineString">LineString</option>
+        <option value="Polygon">Polygon</option>
+        <option value="Circle">Circle</option>
+    </select>
+</form>
 
 <noscript>
     <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
