@@ -24,7 +24,7 @@ public class ClusteringExample implements Example {
 
         // create a MapQuest-layer
         LayerOptions mapQuestLayerOptions = OLFactory.createOptions();
-        
+
         MapQuestOptions mapQuestOptions = OLFactory.createOptions();
         mapQuestOptions.setLayer("hyb");
 
@@ -35,8 +35,8 @@ public class ClusteringExample implements Example {
         Tile mapQuestLayer = OLFactory.createTileLayer(mapQuestLayerOptions);
 
         LayerOptions stamenLayerOptions = OLFactory.createOptions();
-        
-        
+
+
 
         StamenOptions stamenOptions = OLFactory.createOptions();
 
@@ -50,7 +50,7 @@ public class ClusteringExample implements Example {
         View view = OLFactory.createView();
 
         Coordinate centerCoordinate = OLFactory.createCoordinateFromLonLat(0, 0);
-        
+
         view.setCenter(centerCoordinate);
         view.setZoom(2);
 
@@ -71,12 +71,12 @@ public class ClusteringExample implements Example {
         map.addControl(OLFactory.createMousePositionControl());
         map.addControl(OLFactory.createZoomToExtentControl());
         map.addControl(OLFactory.createRotateControl());
-        
+
         Attribution attribution = OLFactory.createAttributionControl();
         attribution.setCollapsed(true);
-        
+
         map.addControl(attribution);
-        
+
         // add some interactions
         map.addInteraction(OLFactory.createKeyboardPan());
         map.addInteraction(OLFactory.createKeyboardZoom());

@@ -11,6 +11,7 @@ public enum ExampleFactory {
     OverlayExample(new OverlayExample()),
     BingMapsExample(new BingMapsExample()),
     DragAndDropShapesExample(new DragAndDropShapesExample()),
+    DrawModifyFeaturesExample(new DrawModifyFeaturesExample()),
     HeatmapExample(new HeatmapExample()),
     CountryVectorLayerExample(new CountryVectorLayerExample()),
     OsmExample(new OsmExample());

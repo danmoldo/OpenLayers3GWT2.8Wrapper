@@ -3,6 +3,7 @@ package olx.source;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 import ol.Attribution;
+import ol.Collection;
 import ol.Feature;
 
 /**
@@ -15,7 +16,7 @@ public interface VectorOptions {
     void setAttributions(Attribution[] attributions);
 
     @JsProperty
-    void setFeatures(Feature[] features);
+    void setFeatures(Object features);
 
     @JsProperty
     void setUrl(String url);

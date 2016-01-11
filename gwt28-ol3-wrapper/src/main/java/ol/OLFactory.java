@@ -17,6 +17,8 @@ import olx.MapOptions;
 import olx.OverlayOptions;
 import olx.ViewOptions;
 import olx.format.KMLOptions;
+import olx.interaction.DrawOptions;
+import olx.interaction.ModifyOptions;
 import olx.proj.ProjectionOptions;
 import ol.source.*;
 import olx.source.*;
@@ -87,6 +89,10 @@ public class OLFactory {
         return new $wnd.ol.interaction.DragAndDrop();
     }-*/;
 
+    public static native Draw createDraw(DrawOptions drawOptions) /*-{
+        return new $wnd.ol.interaction.Draw(drawOptions);
+    }-*/;
+
     public static native KeyboardPan createKeyboardPan() /*-{
         return new $wnd.ol.interaction.KeyboardPan();
     }-*/;
@@ -95,8 +101,8 @@ public class OLFactory {
         return new $wnd.ol.interaction.KeyboardZoom();
     }-*/;
 
-    public static native Modify createModify() /*-{
-        return new $wnd.ol.interaction.Modify();
+    public static native Modify createModify(ModifyOptions modifyOptions) /*-{
+        return new $wnd.ol.interaction.Modify(modifyOptions);
     }-*/;
 
     public static native ol.interaction.Select createSelectInteraction() /*-{
