@@ -14,7 +14,8 @@ public enum ExampleFactory {
     DrawModifyFeaturesExample(new DrawModifyFeaturesExample()),
     HeatmapExample(new HeatmapExample()),
     CountryVectorLayerExample(new CountryVectorLayerExample()),
-    OsmExample(new OsmExample());
+    OsmExample(new OsmExample()),
+    TextStylesExample(new TextStylesExample());
 
     private Example example;
     

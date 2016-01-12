@@ -4,6 +4,7 @@ import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 import ol.Collection;
 import ol.Feature;
+import ol.style.Style;
 
 /**
  * @author Dan Moldovan
@@ -17,4 +18,6 @@ public interface DrawOptions {
     @JsProperty
     void setType(String geometryType);
 
+    @JsProperty
+    void setStyle(Style style);
 }

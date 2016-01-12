@@ -25,7 +25,7 @@ public interface TextOptions {
     void setScale(int scale);
 
     @JsProperty
-    void setRotation(int rotation);
+    void setRotation(double rotation);
 
     @JsProperty
     void setText(String text);

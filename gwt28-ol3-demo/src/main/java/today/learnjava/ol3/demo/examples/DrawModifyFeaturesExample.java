@@ -81,7 +81,7 @@ public class DrawModifyFeaturesExample implements Example {
         final Collection<Feature> features = OLFactory.createCollection();
         VectorOptions featureOverlayOptions = OLFactory.createOptions();
         olx.source.VectorOptions vectorSourceOptions = OLFactory.createOptions();
-        vectorSourceOptions.setFeatures(features);     //Posible problem
+        vectorSourceOptions.setFeatures(features);
         ol.source.Vector vectorSource = OLFactory.createVectorSource(vectorSourceOptions);
         featureOverlayOptions.setSource(vectorSource);
         Vector featureOverlay = OLFactory.createVectorLayer(featureOverlayOptions);
