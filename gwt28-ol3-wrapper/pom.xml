@@ -20,7 +20,7 @@
     <gwt.version>2.8.0-beta1</gwt.version>
     <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <gwt.maven.plugin.version>2.8.0-SNAPSHOT</gwt.maven.plugin.version>
+    <gwt.maven.plugin.version>2.8.0-beta1</gwt.maven.plugin.version>
   </properties>
 
   <dependencies>
