@@ -6,10 +6,8 @@ import olx.AttributionOptions;
 /**
  * @author Dan Moldovan
  */
-@JsType
-public abstract class Attribution {
-    
-    public abstract String getHTML();
+@JsType(isNative = true)
+public interface Attribution {
     
 }
 

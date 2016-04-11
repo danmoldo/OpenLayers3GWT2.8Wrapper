@@ -10,6 +10,7 @@ public class DemoEntryPoint implements EntryPoint {
 
     public void onModuleLoad() {
 
+        ExampleFactory.ImageExample.getExample().show();
         ExampleFactory.BingMapsExample.getExample().show();
         ExampleFactory.OverlayExample.getExample().show();
         ExampleFactory.OsmExample.getExample().show();
@@ -19,6 +20,7 @@ public class DemoEntryPoint implements EntryPoint {
         ExampleFactory.CountryVectorLayerExample.getExample().show();
         ExampleFactory.DrawModifyFeaturesExample.getExample().show();
         ExampleFactory.TextStylesExample.getExample().show();
+
 
     }
     

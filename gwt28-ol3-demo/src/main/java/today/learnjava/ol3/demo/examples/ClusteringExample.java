@@ -83,9 +83,9 @@ public class ClusteringExample implements Example {
 
 
 
-        int count = 1000;
+        int count = 20000;
         Feature[] features = new Feature[count];
-        int e = 4500000;
+        int e = 18000000;
 
         for (int i = 0; i < count; ++i) {
             double[] coordinates = OLFactory.createCoordinate(2 * e * Math.random() - e, 2 * e * Math.random() - e);

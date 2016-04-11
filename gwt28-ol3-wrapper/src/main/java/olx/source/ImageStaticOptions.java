@@ -1,8 +1,10 @@
 package olx.source;
 
 import jsinterop.annotations.JsMethod;
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
+import ol.Extent;
 import ol.proj.Projection;
 
 /**
@@ -11,22 +13,19 @@ import ol.proj.Projection;
 @JsType(isNative = true)
 public interface ImageStaticOptions extends SourceOptions {
     
-    @JsMethod
+    @JsProperty
     void setCrossOrigin(String crossOrigin);
     
-    @JsMethod
-    void setImageExtent(double[] extent);
+    @JsProperty
+    void setImageExtent(Extent extent);
 
-    @JsMethod
+    @JsProperty
     void setImageSize(int[] imageSize);
 
-    @JsMethod
+    @JsProperty
     void setProjection(Projection projection);
 
-    /**
-     * @param url URL to image
-     */
-    @JsMethod
+    @JsProperty
     void setUrl(String url);
 
 }

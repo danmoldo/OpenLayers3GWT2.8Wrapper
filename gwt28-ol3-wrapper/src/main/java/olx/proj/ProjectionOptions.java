@@ -3,6 +3,7 @@ package olx.proj;
 import jsinterop.annotations.JsMethod;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
+import ol.Extent;
 
 /**
  * @author Dan Moldovan
@@ -20,7 +21,7 @@ public interface ProjectionOptions {
     void setGlobal(boolean global);
 
     @JsProperty
-    void setExtent(double[] extent);
+    void setExtent(Extent extent);
 
 }
 

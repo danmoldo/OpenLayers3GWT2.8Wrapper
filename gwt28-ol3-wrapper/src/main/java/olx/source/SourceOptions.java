@@ -1,6 +1,7 @@
 package olx.source;
 
 import jsinterop.annotations.JsMethod;
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 import ol.Attribution;
@@ -11,7 +12,7 @@ import ol.Attribution;
 @JsType(isNative = true)
 public interface SourceOptions {
 
-    @JsMethod
+    @JsProperty
     void setAttributions (Attribution[] attributions);
     
 }
