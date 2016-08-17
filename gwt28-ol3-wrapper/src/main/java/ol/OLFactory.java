@@ -28,6 +28,8 @@ import olx.style.*;
 import olx.interaction.TranslateOptions;
 import olx.layer.LayerOptions;
 
+import java.util.List;
+
 /**
  * @author Dan Moldovan
  */
@@ -79,8 +81,16 @@ public class OLFactory {
         return new $wnd.ol.geom.Point(coordinates);
     }-*/;
 
+    public static native LineString createLineStringGeom(double[][] coordinates) /*-{
+        return new $wnd.ol.geom.LineString(coordinates);
+    }-*/;
+
     public static native ol.geom.Circle createCircleGeom(double[] coordinates) /*-{
         return new $wnd.ol.geom.Circle(coordinates);
+    }-*/;
+
+    public static native ol.geom.Polygon createPolygonGeom(Point... points) /*-{
+        return new $wnd.ol.geom.Polygon(points);
     }-*/;
 
     /** Interactions **/
