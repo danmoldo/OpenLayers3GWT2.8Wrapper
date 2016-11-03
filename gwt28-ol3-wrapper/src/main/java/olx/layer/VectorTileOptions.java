@@ -1,11 +1,9 @@
 package olx.layer;
 
-import com.google.gwt.thirdparty.javascript.rhino.head.Function;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 import ol.Extent;
 import ol.Map;
-import ol.source.*;
 import ol.style.Style;
 import ol.style.StyleFunction;
 
@@ -17,9 +15,6 @@ public interface VectorTileOptions {
 
     @JsProperty
     void setRenderBuffer(int renderBuffer);
-
-    @JsProperty
-    void setRenderOrder(Function renderOrder);
 
     @JsProperty
     void setMap(Map map);
