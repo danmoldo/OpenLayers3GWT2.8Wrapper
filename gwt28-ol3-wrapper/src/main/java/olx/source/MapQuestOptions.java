@@ -1,6 +1,5 @@
 package olx.source;
 
-
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
@@ -11,7 +10,9 @@ import jsinterop.annotations.JsType;
 public interface MapQuestOptions {
 
     @JsProperty
-    void setLayer(String layer);
-    
-}
+    void setLayer(String layerName);
 
+    @JsProperty
+    void setUrl(String url);
+
+}
