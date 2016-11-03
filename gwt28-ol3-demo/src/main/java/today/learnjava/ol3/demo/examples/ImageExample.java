@@ -54,7 +54,7 @@ public class ImageExample implements Example {
         // add some interactions
         map.addInteraction(OLFactory.createKeyboardPan());
         map.addInteraction(OLFactory.createKeyboardZoom());
-        
+
         ImageOptions imageLayerOptions = OLFactory.createOptions();
         ImageStaticOptions imageStaticOptions = OLFactory.createOptions();
         imageStaticOptions.setUrl("http://imgs.xkcd.com/comics/online_communities.png");
