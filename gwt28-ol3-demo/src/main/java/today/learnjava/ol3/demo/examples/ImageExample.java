@@ -1,20 +1,16 @@
 package today.learnjava.ol3.demo.examples;
 
 import ol.*;
-import ol.control.Attribution;
-import ol.layer.Heatmap;
 import ol.layer.Image;
-import ol.layer.Tile;
 import ol.proj.Projection;
-import ol.source.*;
+import ol.source.ImageStatic;
 import olx.AttributionOptions;
 import olx.MapOptions;
 import olx.ViewOptions;
-import olx.format.KMLOptions;
 import olx.layer.ImageOptions;
 import olx.layer.LayerOptions;
 import olx.proj.ProjectionOptions;
-import olx.source.*;
+import olx.source.ImageStaticOptions;
 
 /**
  * @author Dan Moldovan
@@ -58,16 +54,7 @@ public class ImageExample implements Example {
         // add some interactions
         map.addInteraction(OLFactory.createKeyboardPan());
         map.addInteraction(OLFactory.createKeyboardZoom());
-
-        // create a MapQuest-layer
-        LayerOptions mapQuestLayerOptions = OLFactory.createOptions();
-        MapQuestOptions mapQuestOptions = OLFactory.createOptions();
-        mapQuestOptions.setLayer("sat");
-        MapQuest mapQuestSource = OLFactory.createMapQuestSource(mapQuestOptions);
-        mapQuestLayerOptions.setSource(mapQuestSource);
-        Tile mapQuestLayer = OLFactory.createTileLayer(mapQuestLayerOptions);
-//        map.addLayer(mapQuestLayer);
-
+        
         ImageOptions imageLayerOptions = OLFactory.createOptions();
         ImageStaticOptions imageStaticOptions = OLFactory.createOptions();
         imageStaticOptions.setUrl("http://imgs.xkcd.com/comics/online_communities.png");

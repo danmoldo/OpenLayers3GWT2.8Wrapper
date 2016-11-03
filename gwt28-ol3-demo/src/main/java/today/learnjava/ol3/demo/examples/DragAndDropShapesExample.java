@@ -1,16 +1,18 @@
 package today.learnjava.ol3.demo.examples;
 
-import ol.*;
+import ol.Coordinate;
+import ol.Map;
+import ol.OLFactory;
+import ol.View;
 import ol.interaction.Select;
 import ol.interaction.Translate;
+import ol.layer.Tile;
+import ol.layer.Vector;
+import ol.source.Stamen;
 import olx.MapOptions;
 import olx.interaction.TranslateOptions;
 import olx.layer.LayerOptions;
-import ol.layer.Tile;
-import ol.layer.Vector;
 import olx.layer.VectorOptions;
-import ol.source.*;
-import olx.source.MapQuestOptions;
 import olx.source.StamenOptions;
 
 /**
@@ -19,18 +21,6 @@ import olx.source.StamenOptions;
 public class DragAndDropShapesExample implements Example {
 
     public void show() {
-
-        LayerOptions layerOptions = OLFactory.createOptions();
-
-        MapQuestOptions mapQuestOptions = OLFactory.createOptions();
-        mapQuestOptions.setLayer("hyb");
-
-        MapQuest mapQuestSource = OLFactory.createMapQuestSource(mapQuestOptions);
-
-        layerOptions.setSource(mapQuestSource);
-
-        Tile mapQuestLayer = OLFactory.createTileLayer(layerOptions);
-
         LayerOptions stamenLayerOptions = OLFactory.createOptions();
         StamenOptions stamenOptions = OLFactory.createOptions();
 
@@ -47,12 +37,10 @@ public class DragAndDropShapesExample implements Example {
         view.setCenter(centerCoordinate);
         view.setZoom(2);
 
-
         // create the map
         MapOptions mapOptions = OLFactory.createOptions();
         Map map = OLFactory.createMap(mapOptions);
 
-        map.addLayer(mapQuestLayer);
         map.addLayer(stamenLayer);
 
         map.setView(view);

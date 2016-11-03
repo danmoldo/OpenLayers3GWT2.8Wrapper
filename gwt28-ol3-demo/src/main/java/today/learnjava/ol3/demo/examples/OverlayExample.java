@@ -3,12 +3,11 @@ package today.learnjava.ol3.demo.examples;
 import com.google.gwt.dom.client.Document;
 import ol.*;
 import ol.event.ListenerFunction;
+import ol.layer.Tile;
+import ol.source.Stamen;
 import olx.MapOptions;
 import olx.OverlayOptions;
 import olx.layer.LayerOptions;
-import ol.layer.Tile;
-import ol.source.*;
-import olx.source.MapQuestOptions;
 import olx.source.StamenOptions;
 
 /**
@@ -18,24 +17,10 @@ public class OverlayExample implements Example {
 
     public void show() {
 
-        // create a MapQuest-layer
-        LayerOptions mapQuestLayerOptions = OLFactory.createOptions();
-
-        MapQuestOptions mapQuestOptions = OLFactory.createOptions();
-        mapQuestOptions.setLayer("hyb");
-
-        MapQuest mapQuestSource = OLFactory.createMapQuestSource(mapQuestOptions);
-
-        mapQuestLayerOptions.setSource(mapQuestSource);
-
-        Tile mapQuestLayer = OLFactory.createTileLayer(mapQuestLayerOptions);
-
+        // create a Stamen-layer
         LayerOptions stamenLayerOptions = OLFactory.createOptions();
 
-
-        // create a Stamen-layer
         StamenOptions stamenOptions = OLFactory.createOptions();
-
         stamenOptions.setLayer("watercolor");
         Stamen stamenSource = OLFactory.createStamenSource(stamenOptions);
         stamenLayerOptions.setSource(stamenSource);
@@ -58,7 +43,6 @@ public class OverlayExample implements Example {
         final Map map = OLFactory.createMap(mapOptions);
 
         stamenLayer.setOpacity(0.5f);
-        map.addLayer(mapQuestLayer);
         map.addLayer(stamenLayer);
 
 

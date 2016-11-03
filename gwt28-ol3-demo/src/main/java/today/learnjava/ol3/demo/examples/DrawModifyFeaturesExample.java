@@ -2,28 +2,20 @@ package today.learnjava.ol3.demo.examples;
 
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.dom.client.Element;
-import com.google.gwt.dom.client.InputElement;
 import com.google.gwt.dom.client.SelectElement;
 import com.google.gwt.user.client.Event;
 import com.google.gwt.user.client.EventListener;
-import com.google.gwt.user.client.Window;
 import ol.*;
 import ol.interaction.Draw;
 import ol.interaction.Modify;
-import ol.interaction.Select;
-import ol.interaction.Translate;
 import ol.layer.Tile;
 import ol.layer.Vector;
-import ol.source.MapQuest;
 import ol.source.Stamen;
 import olx.MapOptions;
 import olx.interaction.DrawOptions;
 import olx.interaction.ModifyOptions;
-import olx.interaction.TranslateOptions;
 import olx.layer.LayerOptions;
 import olx.layer.VectorOptions;
-import olx.layer.VectorTileOptions;
-import olx.source.MapQuestOptions;
 import olx.source.StamenOptions;
 
 /**
@@ -34,16 +26,6 @@ public class DrawModifyFeaturesExample implements Example {
     static Draw draw;
 
     public void show() {
-        LayerOptions layerOptions = OLFactory.createOptions();
-
-        MapQuestOptions mapQuestOptions = OLFactory.createOptions();
-        mapQuestOptions.setLayer("hyb");
-
-        MapQuest mapQuestSource = OLFactory.createMapQuestSource(mapQuestOptions);
-
-        layerOptions.setSource(mapQuestSource);
-
-        Tile mapQuestLayer = OLFactory.createTileLayer(layerOptions);
 
         LayerOptions stamenLayerOptions = OLFactory.createOptions();
         StamenOptions stamenOptions = OLFactory.createOptions();
@@ -66,7 +48,6 @@ public class DrawModifyFeaturesExample implements Example {
         MapOptions mapOptions = OLFactory.createOptions();
         final Map map = OLFactory.createMap(mapOptions);
 
-        map.addLayer(mapQuestLayer);
         map.addLayer(stamenLayer);
 
         map.setView(view);

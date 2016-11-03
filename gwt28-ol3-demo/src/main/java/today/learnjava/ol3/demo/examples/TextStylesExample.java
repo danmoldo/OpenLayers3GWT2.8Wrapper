@@ -6,13 +6,11 @@ import com.google.gwt.dom.client.InputElement;
 import com.google.gwt.dom.client.SelectElement;
 import com.google.gwt.user.client.Event;
 import com.google.gwt.user.client.EventListener;
-import com.google.gwt.user.client.Window;
 import ol.*;
 import ol.interaction.Draw;
 import ol.interaction.Modify;
 import ol.layer.Tile;
 import ol.layer.Vector;
-import ol.source.MapQuest;
 import ol.source.Stamen;
 import ol.style.*;
 import olx.MapOptions;
@@ -20,7 +18,6 @@ import olx.interaction.DrawOptions;
 import olx.interaction.ModifyOptions;
 import olx.layer.LayerOptions;
 import olx.layer.VectorOptions;
-import olx.source.MapQuestOptions;
 import olx.source.StamenOptions;
 import olx.style.FillOptions;
 import olx.style.StrokeOptions;
@@ -39,24 +36,11 @@ public class TextStylesExample implements Example {
     private Vector featureOverlay = null;
 
     public void show() {
-        // create a MapQuest-layer
-        LayerOptions mapQuestLayerOptions = OLFactory.createOptions();
-
-        MapQuestOptions mapQuestOptions = OLFactory.createOptions();
-        mapQuestOptions.setLayer("hyb");
-
-        MapQuest mapQuestSource = OLFactory.createMapQuestSource(mapQuestOptions);
-
-        mapQuestLayerOptions.setSource(mapQuestSource);
-
-        Tile mapQuestLayer = OLFactory.createTileLayer(mapQuestLayerOptions);
-
-        LayerOptions stamenLayerOptions = OLFactory.createOptions();
-
 
         // create a Stamen-layer
-        StamenOptions stamenOptions = OLFactory.createOptions();
+        LayerOptions stamenLayerOptions = OLFactory.createOptions();
 
+        StamenOptions stamenOptions = OLFactory.createOptions();
         stamenOptions.setLayer("watercolor");
         Stamen stamenSource = OLFactory.createStamenSource(stamenOptions);
         stamenLayerOptions.setSource(stamenSource);
@@ -79,7 +63,6 @@ public class TextStylesExample implements Example {
         final Map map = OLFactory.createMap(mapOptions);
 
         stamenLayer.setOpacity(0.5f);
-        map.addLayer(mapQuestLayer);
         map.addLayer(stamenLayer);
 
 

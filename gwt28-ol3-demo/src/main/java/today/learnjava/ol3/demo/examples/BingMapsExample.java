@@ -6,8 +6,6 @@ import olx.layer.LayerOptions;
 import ol.layer.Tile;
 import ol.source.BingMaps;
 import olx.source.BingMapsOptions;
-import ol.source.MapQuest;
-import olx.source.MapQuestOptions;
 
 /**
  * @author Dan Moldovan
@@ -17,17 +15,6 @@ public class BingMapsExample implements Example {
     final static String API_KEY = "YOUR-BING-MAPS-sAPI-KEY";
 
     public void show() {
-
-        LayerOptions layerOptions = OLFactory.createOptions();
-
-        MapQuestOptions mapQuestOptions = OLFactory.createOptions();
-        mapQuestOptions.setLayer("hyb");
-
-        MapQuest mapQuestSource = OLFactory.createMapQuestSource(mapQuestOptions);
-
-        layerOptions.setSource(mapQuestSource);
-
-        Tile mapQuestLayer = OLFactory.createTileLayer(layerOptions);
 
         // create a view
         View view = OLFactory.createView();
@@ -43,7 +30,7 @@ public class BingMapsExample implements Example {
         bingMapsOptions.setKey(API_KEY);
         BingMaps bingMaps = OLFactory.createBingMaps(bingMapsOptions);
 
-        layerOptions = OLFactory.createOptions();
+        LayerOptions layerOptions = OLFactory.createOptions();
         layerOptions.setSource(bingMaps);
         Tile bingTile = OLFactory.createTileLayer(layerOptions);
 
@@ -52,7 +39,6 @@ public class BingMapsExample implements Example {
         MapOptions mapOptions = OLFactory.createOptions();
         Map map = OLFactory.createMap(mapOptions);
 
-        map.addLayer(mapQuestLayer);
         map.addLayer(bingTile);
 
         map.setView(view);

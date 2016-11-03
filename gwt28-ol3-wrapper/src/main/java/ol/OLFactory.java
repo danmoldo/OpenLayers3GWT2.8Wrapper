@@ -151,10 +151,6 @@ public class OLFactory {
         return new $wnd.ol.source.ImageWMS(imageWMSOptions);
     }-*/;
 
-    public static native MapQuest createMapQuestSource(MapQuestOptions mapQuestOptions) /*-{
-        return new $wnd.ol.source.MapQuest(mapQuestOptions);
-    }-*/;
-
     public static native Stamen createStamenSource(StamenOptions stamenOptions) /*-{
         return new $wnd.ol.source.Stamen(stamenOptions);
     }-*/;

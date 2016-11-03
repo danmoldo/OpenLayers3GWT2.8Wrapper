@@ -2,17 +2,16 @@ package today.learnjava.ol3.demo.examples;
 
 import ol.*;
 import ol.control.Attribution;
-
 import ol.geom.Point;
 import ol.layer.Tile;
-import ol.source.*;
-import olx.source.ClusterOptions;
-import olx.source.MapQuestOptions;
-import olx.source.StamenOptions;
-import olx.source.VectorOptions;
-import olx.layer.*;
+import ol.source.Cluster;
+import ol.source.Stamen;
 import ol.style.*;
 import olx.MapOptions;
+import olx.layer.LayerOptions;
+import olx.source.ClusterOptions;
+import olx.source.StamenOptions;
+import olx.source.VectorOptions;
 import olx.style.*;
 
 /**
@@ -22,21 +21,7 @@ public class ClusteringExample implements Example {
 
     public void show() {
 
-        // create a MapQuest-layer
-        LayerOptions mapQuestLayerOptions = OLFactory.createOptions();
-
-        MapQuestOptions mapQuestOptions = OLFactory.createOptions();
-        mapQuestOptions.setLayer("hyb");
-
-        MapQuest mapQuestSource = OLFactory.createMapQuestSource(mapQuestOptions);
-
-        mapQuestLayerOptions.setSource(mapQuestSource);
-
-        Tile mapQuestLayer = OLFactory.createTileLayer(mapQuestLayerOptions);
-
         LayerOptions stamenLayerOptions = OLFactory.createOptions();
-
-
 
         StamenOptions stamenOptions = OLFactory.createOptions();
 
@@ -62,7 +47,6 @@ public class ClusteringExample implements Example {
         Map map = OLFactory.createMap(mapOptions);
 
         stamenLayer.setOpacity(0.5f);
-        map.addLayer(mapQuestLayer);
 
         // add some controls
         map.addControl(OLFactory.createScaleLineControl());

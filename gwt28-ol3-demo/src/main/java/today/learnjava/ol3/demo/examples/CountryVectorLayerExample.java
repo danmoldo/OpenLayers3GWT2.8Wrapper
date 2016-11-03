@@ -2,25 +2,24 @@ package today.learnjava.ol3.demo.examples;
 
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.dom.client.Element;
-import com.google.gwt.user.client.Window;
 import ol.*;
 import ol.event.ListenerFunction;
 import ol.functions.FeatureLayerFunction;
 import ol.layer.Layer;
 import ol.layer.Tile;
 import ol.layer.Vector;
-import ol.source.MapQuest;
-import ol.style.*;
+import ol.source.Osm;
+import ol.style.Fill;
+import ol.style.Stroke;
+import ol.style.Style;
+import ol.style.StyleFunction;
 import olx.MapOptions;
 import olx.layer.LayerOptions;
 import olx.layer.VectorOptions;
-import olx.source.MapQuestOptions;
+import olx.source.XyzOptions;
 import olx.style.FillOptions;
 import olx.style.StrokeOptions;
 import olx.style.StyleOptions;
-import olx.style.TextOptions;
-
-import java.util.HashMap;
 
 /**
  * @autor Dan Moldovan
@@ -43,6 +42,15 @@ public class CountryVectorLayerExample implements Example {
         mapOptions.setView(view);
         final Map map = OLFactory.createMap(mapOptions);
 
+        // create a OSM-layer
+        XyzOptions osmSourceOptions = OLFactory.createOptions();
+
+        Osm osmSource = OLFactory.createOsm(osmSourceOptions);
+        LayerOptions osmLayerOptions = OLFactory.createOptions();
+        osmLayerOptions.setSource(osmSource);
+
+        Tile osmLayer = OLFactory.createTileLayer(osmLayerOptions);
+
         // add some controls
         map.addControl(OLFactory.createScaleLineControl());
         map.addControl(OLFactory.createFullScreenControl());
@@ -54,14 +62,6 @@ public class CountryVectorLayerExample implements Example {
         // add some interactions
         map.addInteraction(OLFactory.createKeyboardPan());
         map.addInteraction(OLFactory.createKeyboardZoom());
-
-        // create a MapQuest-layer
-        LayerOptions mapQuestLayerOptions = OLFactory.createOptions();
-        MapQuestOptions mapQuestOptions = OLFactory.createOptions();
-        mapQuestOptions.setLayer("sat");
-        MapQuest mapQuestSource = OLFactory.createMapQuestSource(mapQuestOptions);
-        mapQuestLayerOptions.setSource(mapQuestSource);
-        Tile mapQuestLayer = OLFactory.createTileLayer(mapQuestLayerOptions);
 
         // create country vector layer
         VectorOptions vectorLayerOptions = OLFactory.createOptions();
@@ -88,7 +88,7 @@ public class CountryVectorLayerExample implements Example {
                 return style;
             }
         });
-        map.addLayer(mapQuestLayer);
+        map.addLayer(osmLayer);
         map.addLayer(vectorLayer);
 
 
