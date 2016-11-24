@@ -6,6 +6,8 @@ import com.google.gwt.dom.client.SelectElement;
 import com.google.gwt.user.client.Event;
 import com.google.gwt.user.client.EventListener;
 import ol.*;
+import ol.geom.Point;
+import ol.geom.Polygon;
 import ol.interaction.Draw;
 import ol.interaction.Modify;
 import ol.layer.Tile;

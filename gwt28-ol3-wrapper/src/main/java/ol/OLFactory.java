@@ -81,6 +81,10 @@ public class OLFactory {
         return new $wnd.ol.geom.Point(coordinates);
     }-*/;
 
+    public static native LinearRing createLinearRingGeom(double[][] points) /*-{
+        return new $wnd.ol.geom.LinearRing(points);
+    }-*/;
+
     public static native LineString createLineStringGeom(double[][] coordinates) /*-{
         return new $wnd.ol.geom.LineString(coordinates);
     }-*/;
@@ -89,8 +93,8 @@ public class OLFactory {
         return new $wnd.ol.geom.Circle(coordinates);
     }-*/;
 
-    public static native ol.geom.Polygon createPolygonGeom(Point... points) /*-{
-        return new $wnd.ol.geom.Polygon(points);
+    public static native ol.geom.Polygon createPolygonGeom(double[][][] linearRing) /*-{
+        return new $wnd.ol.geom.Polygon(linearRing);
     }-*/;
 
     /** Interactions **/
