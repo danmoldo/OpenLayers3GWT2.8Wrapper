@@ -11,17 +11,20 @@ import ol.style.Style;
  * @author Dan Moldovan
  */
 @JsType(isNative = true)
-public interface DrawOptions {
+public interface SnapOptions {
 
     @JsProperty
     void setFeatures(Collection<Feature> features);
 
     @JsProperty
+    void setEdge(boolean edge);
+
+    @JsProperty
+    void setVertex(boolean vertex);
+
+    @JsProperty
+    void setPixelTolerance(int pixelTolerance);
+
+    @JsProperty
     void setSource(Vector source);
-
-    @JsProperty
-    void setType(String geometryType);
-
-    @JsProperty
-    void setStyle(Style style);
 }

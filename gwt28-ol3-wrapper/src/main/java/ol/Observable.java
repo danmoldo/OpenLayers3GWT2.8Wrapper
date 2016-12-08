@@ -20,5 +20,7 @@ public interface Observable {
 
     void unByKey(Key key);
 
+    void changed();
+
 }
 

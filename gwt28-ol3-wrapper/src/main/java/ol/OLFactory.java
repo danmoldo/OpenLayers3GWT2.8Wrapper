@@ -19,6 +19,7 @@ import olx.ViewOptions;
 import olx.format.KMLOptions;
 import olx.interaction.DrawOptions;
 import olx.interaction.ModifyOptions;
+import olx.interaction.SnapOptions;
 import olx.proj.ProjectionOptions;
 import ol.source.*;
 import olx.source.*;
@@ -101,6 +102,10 @@ public class OLFactory {
 
     public static native DragAndDrop createDragAndDrop() /*-{
         return new $wnd.ol.interaction.DragAndDrop();
+    }-*/;
+
+    public static native Snap createSnap(SnapOptions snapOptions) /*-{
+        return new $wnd.ol.interaction.Snap(snapOptions);
     }-*/;
 
     public static native Draw createDraw(DrawOptions drawOptions) /*-{

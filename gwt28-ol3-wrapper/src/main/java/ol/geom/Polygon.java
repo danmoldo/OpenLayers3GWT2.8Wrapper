@@ -29,7 +29,7 @@ public interface Polygon extends SimpleGeometry {
     double getArea();
 
     @JsMethod
-    Collection<Collection<Coordinate>> getCoordinates(boolean right);
+    Coordinate[][] getCoordinates(boolean right);
 
     @JsMethod
     Point getInteriorPoint();
