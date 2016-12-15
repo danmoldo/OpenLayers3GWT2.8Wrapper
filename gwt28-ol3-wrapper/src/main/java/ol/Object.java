@@ -14,6 +14,14 @@ public interface Object extends Observable {
     @JsMethod
     java.lang.Object get(String key);
 
+    @JsMethod
+    void set(String key, java.lang.Object value, boolean silent);
+
+    @JsMethod
+    java.util.Map<String, java.lang.Object> getProperties();
+
+    @JsMethod
+    void setProperties(java.util.Map<String, java.lang.Object> properties, boolean silent);
     
 }
 

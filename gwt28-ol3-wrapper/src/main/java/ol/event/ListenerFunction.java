@@ -1,6 +1,7 @@
 package ol.event;
 
 import com.google.gwt.user.client.*;
+import goog.events.*;
 import jsinterop.annotations.JsFunction;
 import ol.MapBrowserEvent;
 
@@ -12,5 +13,5 @@ import ol.MapBrowserEvent;
 @JsFunction
 public interface ListenerFunction {
 
-    public void exec(MapBrowserEvent event);
+    public void exec(goog.events.Event event);
 }

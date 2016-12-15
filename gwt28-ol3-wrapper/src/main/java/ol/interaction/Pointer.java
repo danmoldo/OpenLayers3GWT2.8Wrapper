@@ -1,5 +1,6 @@
 package ol.interaction;
 
+import jsinterop.annotations.JsMethod;
 import jsinterop.annotations.JsType;
 
 /**

@@ -2,6 +2,7 @@ package ol.source;
 
 import jsinterop.annotations.JsMethod;
 import jsinterop.annotations.JsType;
+import ol.Collection;
 import ol.Extent;
 import ol.Feature;
 
@@ -33,6 +34,9 @@ public interface Vector extends Source {
 
     @JsMethod
     Feature[] getFeatures();
+
+    @JsMethod
+    Collection<Feature> getFeaturesCollection();
 
     @JsMethod
     Feature[] getFeaturesAtCoordinate(double[] coordinate);

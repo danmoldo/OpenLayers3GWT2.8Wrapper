@@ -4,6 +4,7 @@ import jsinterop.annotations.JsFunction;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 import ol.Collection;
+import ol.EventsConditionType;
 import ol.Feature;
 
 /**
@@ -16,6 +17,6 @@ public interface ModifyOptions {
     void setFeatures(Collection<Feature> features);
 
     @JsProperty
-    void setDeleteCondition(boolean deleteCondition);
+    void setDeleteCondition(EventsConditionType eventsConditionType);
 
 }

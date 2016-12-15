@@ -2,6 +2,7 @@ package today.learnjava.ol3.demo.examples;
 
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.dom.client.Element;
+import goog.events.Event;
 import ol.*;
 import ol.event.ListenerFunction;
 import ol.functions.FeatureLayerFunction;
@@ -101,8 +102,8 @@ public class CountryVectorLayerExample implements Example {
         map.addLayer(featureOverlay);
 
         map.on("pointermove", new ListenerFunction() {
-            public void exec(MapBrowserEvent event) {
-                Pixel pixel = map.getEventPixel(event.getOriginalEvent());
+            public void exec(Event event) {
+                Pixel pixel = map.getEventPixel(((MapBrowserEvent)event).getOriginalEvent());
                 map.forEachFeatureAtPixel(pixel, new FeatureLayerFunction() {
                     public void exec(Feature feature, Layer layer) {
                         Element element = Document.get().getElementById("info");
