@@ -1,9 +1,12 @@
 package today.learnjava.ol3.demo.examples;
 
 import com.google.gwt.dom.client.Document;
+import com.google.gwt.user.client.Window;
 import goog.events.Event;
 import ol.*;
 import ol.event.ListenerFunction;
+import ol.functions.FeatureLayerFunction;
+import ol.layer.Layer;
 import ol.layer.Tile;
 import ol.source.Stamen;
 import olx.MapOptions;
@@ -87,7 +90,8 @@ public class OverlayExample implements Example {
 
         map.on("click", new ListenerFunction() {
             public void exec(Event event) {
-                Util.showPopup(overlayFinal, ((MapBrowserEvent)event).getCoordinate());
+                Util.showHTMLPopup(overlayFinal, ((MapBrowserEvent)event).getCoordinate(), "Hello");
+//                Util.showPopup(overlayFinal, ((MapBrowserEvent)event).getCoordinate());
             }
         });
 

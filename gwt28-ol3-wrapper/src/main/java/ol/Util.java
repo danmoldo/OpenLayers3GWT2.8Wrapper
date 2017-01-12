@@ -43,5 +43,29 @@ public class Util {
 
     }-*/;
 
+    public static native void showHTMLPopup(Overlay popup, Coordinate coordinate, String html) /*-{
+        var element = popup.getElement();
+        var coordinate = coordinate;
+        $wnd.$(element).popover('destroy');
+
+        popup.setPosition(coordinate);
+
+        // the keys are quoted to prevent renaming in ADVANCED mode.
+        $wnd.$(element).popover({
+            'placement': 'top',
+            'animation': false,
+            'html': true,
+            'content': '<p>The location you clicked was:</p><code>' + html + '</code>'
+        });
+
+        $wnd.$(element).popover('show');
+
+    }-*/;
+
+    public static native void hidePopup(Overlay popup) /*-{
+        var element = popup.getElement();
+        $wnd.$(element).popover('destroy');
+    }-*/;
+
 
 }

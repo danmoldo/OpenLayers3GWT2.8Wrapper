@@ -16,4 +16,7 @@ public interface MapBrowserEvent extends MapEvent {
     @JsProperty
     Event getOriginalEvent();
 
+    @JsProperty
+    Pixel getPixel();
+
 }

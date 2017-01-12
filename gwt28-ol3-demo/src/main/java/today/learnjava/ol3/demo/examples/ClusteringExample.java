@@ -1,8 +1,15 @@
 package today.learnjava.ol3.demo.examples;
 
+import com.google.gwt.dom.client.Document;
+import com.google.gwt.dom.client.Element;
+import com.google.gwt.user.client.Window;
+import goog.events.Event;
 import ol.*;
 import ol.control.Attribution;
+import ol.event.ListenerFunction;
+import ol.functions.FeatureLayerFunction;
 import ol.geom.Point;
+import ol.layer.Layer;
 import ol.layer.Tile;
 import ol.source.Cluster;
 import ol.source.Stamen;
@@ -44,7 +51,7 @@ public class ClusteringExample implements Example {
         mapOptions.setTarget("mapClustering");
         mapOptions.setView(view);
 
-        Map map = OLFactory.createMap(mapOptions);
+        final Map map = OLFactory.createMap(mapOptions);
 
         stamenLayer.setOpacity(0.5f);
 

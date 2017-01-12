@@ -34,6 +34,9 @@ public interface Map extends Object {
     @JsMethod
     void forEachFeatureAtPixel(Pixel pixel, FeatureLayerFunction featureLayerFunction);
 
+    @JsMethod
+    boolean hasFeatureAtPixel(Pixel pixel);
+
     //TODO forEachLayerAtPixel
 
     @JsMethod
