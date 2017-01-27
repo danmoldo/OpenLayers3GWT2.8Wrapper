@@ -16,6 +16,7 @@ import olx.AttributionOptions;
 import olx.MapOptions;
 import olx.OverlayOptions;
 import olx.ViewOptions;
+import olx.control.ControlOptions;
 import olx.format.KMLOptions;
 import olx.interaction.DrawOptions;
 import olx.interaction.ModifyOptions;
@@ -37,6 +38,10 @@ import java.util.List;
 public class OLFactory {
 
     /** Controls **/
+
+    public static native ol.control.Control createControl(ControlOptions controlOptions) /*-{
+        return new $wnd.ol.control.Control(controlOptions);
+    }-*/;
 
     public static native ol.control.Attribution createAttributionControl() /*-{
         return new $wnd.ol.control.Attribution();

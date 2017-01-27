@@ -19,6 +19,7 @@ public class DemoEntryPoint implements EntryPoint {
         ExampleFactory.HeatmapExample.getExample().show();
         ExampleFactory.CountryVectorLayerExample.getExample().show();
         ExampleFactory.DrawModifyFeaturesExample.getExample().show();
+        ExampleFactory.CustomDropdownExample.getExample().show();
         ExampleFactory.TextStylesExample.getExample().show();
 
 

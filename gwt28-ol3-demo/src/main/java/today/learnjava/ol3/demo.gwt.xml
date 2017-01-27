@@ -5,6 +5,7 @@
   <inherits name='com.google.gwt.user.User'/>
   <inherits name='wrapper'/>
   <inherits name="org.gwtbootstrap3.GwtBootstrap3"/>
+  <inherits name="org.gwtbootstrap3.extras.select.Select"/>
 
   <entry-point class='today.learnjava.ol3.demo.DemoEntryPoint'/>
 

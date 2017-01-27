@@ -16,7 +16,8 @@ public enum ExampleFactory {
     CountryVectorLayerExample(new CountryVectorLayerExample()),
     OsmExample(new OsmExample()),
     TextStylesExample(new TextStylesExample()),
-    ImageExample(new ImageExample());
+    ImageExample(new ImageExample()),
+    CustomDropdownExample(new CustomDropdownExample());
 
     private Example example;
     
