@@ -19,7 +19,7 @@ public interface Vector extends Source {
     void addFeatures(Feature[] features);
 
     @JsMethod
-    void clear(boolean clear);
+    void clear();
 
     //TODO forEachFeature
 
