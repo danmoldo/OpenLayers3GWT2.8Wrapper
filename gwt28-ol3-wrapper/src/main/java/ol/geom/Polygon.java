@@ -47,6 +47,9 @@ public interface Polygon extends SimpleGeometry {
     String getType();
 
     @JsMethod
+    boolean intersectsCoordinate(Coordinate coordinate);
+
+    @JsMethod
     boolean intersectsExtent(Extent extent);
 
     @JsMethod
