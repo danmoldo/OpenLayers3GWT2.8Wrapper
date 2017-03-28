@@ -16,6 +16,9 @@ public interface Style {
     Text getText();
 
     @JsMethod
+    void setText(Text text);
+
+    @JsMethod
     Fill getFill();
 }
 
