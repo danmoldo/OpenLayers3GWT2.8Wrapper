@@ -20,5 +20,8 @@ public interface Style {
 
     @JsMethod
     Fill getFill();
+
+    @JsMethod
+    void setFill(Fill fill);
 }
 
