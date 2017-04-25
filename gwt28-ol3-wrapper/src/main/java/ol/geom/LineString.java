@@ -12,9 +12,6 @@ import ol.Coordinate;
 public interface LineString extends SimpleGeometry {
 
     @JsProperty
-    Collection<Coordinate> getCoordinates();
-
-    @JsProperty
-    void setCoordinates(Collection<Coordinate> coordinates);
+    Double[] getFlatCoordinates();
 
 }
