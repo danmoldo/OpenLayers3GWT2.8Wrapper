@@ -1,5 +1,6 @@
 package ol.source;
 
+import jsinterop.annotations.JsMethod;
 import jsinterop.annotations.JsType;
 import ol.*;
 
@@ -8,6 +9,9 @@ import ol.*;
  */
 @JsType(isNative = true)
 public interface Source extends ol.Object{
+
+    @JsMethod
+    String getState();
 
 }
 
