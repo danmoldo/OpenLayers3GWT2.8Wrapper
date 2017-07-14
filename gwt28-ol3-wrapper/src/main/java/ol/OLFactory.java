@@ -280,6 +280,10 @@ public class OLFactory {
         return new $wnd.ol.proj.fromLonLat([x,y]);
     }-*/;
 
+    public static native Pixel createPixel(double x, double y)  /*-{
+        return [x,y];
+    }-*/;
+
     public static native Extent createExtent(double minX, double minY, double maxX, double maxY) /*-{
         return [minX, minY, maxX, maxY];
     }-*/;

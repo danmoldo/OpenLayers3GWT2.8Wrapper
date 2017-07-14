@@ -76,7 +76,7 @@ public interface Map extends Object {
     View getView();
 
     @JsMethod
-    Element getViewPort();
+    Element getViewport();
 
     @JsMethod
     void removeControl(Control control);

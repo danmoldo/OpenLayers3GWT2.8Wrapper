@@ -13,15 +13,27 @@ import jsinterop.annotations.JsType;
 public interface Style {
 
     @JsMethod
-    Text getText();
-
-    @JsMethod
-    void setText(Text text);
-
-    @JsMethod
     Fill getFill();
 
     @JsMethod
     void setFill(Fill fill);
+
+    @JsMethod
+    Image getImage();
+
+    @JsMethod
+    void setImage(Image image);
+
+    @JsMethod
+    Stroke getStroke();
+
+    @JsMethod
+    void setStroke(Stroke stroke);
+
+    @JsMethod
+    Text getText();
+
+    @JsMethod
+    void setText(Text text);
 }
 
