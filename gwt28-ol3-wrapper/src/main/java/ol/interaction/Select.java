@@ -6,6 +6,7 @@ import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 import ol.Collection;
 import ol.Feature;
+import ol.MapBrowserEvent;
 
 /**
  * @author Dan Moldovan
@@ -20,7 +21,20 @@ public interface Select extends Interaction {
     interface Event extends goog.events.Event {
 
         @JsProperty
+        Feature[] getDeselected();
+
+        @JsProperty
+        MapBrowserEvent getMapBrowserEvent();
+
+        @JsProperty
         Feature[] getSelected();
+
+        @JsProperty
+        Object getTarget();
+
+        @JsProperty
+        String getType();
+
     }
 
 }
