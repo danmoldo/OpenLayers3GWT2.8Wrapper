@@ -208,6 +208,10 @@ public class OLFactory {
         return new $wnd.ol.style.Fill(fillOptions);
     }-*/;
 
+    public static native ol.style.Icon createIconStyle(IconOptions iconOptions) /*-{
+        return new $wnd.ol.style.Icon(iconOptions);
+    }-*/;
+
     public static native ol.style.Image createImageStyle(ImageOptions imageOptions) /*-{
         return new $wnd.ol.style.Image(imageOptions);
     }-*/;
