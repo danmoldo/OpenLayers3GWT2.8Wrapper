@@ -17,17 +17,16 @@ import olx.MapOptions;
 import olx.OverlayOptions;
 import olx.ViewOptions;
 import olx.control.ControlOptions;
+import olx.control.FullScreenOptions;
+import olx.control.ZoomOptions;
 import olx.format.KMLOptions;
-import olx.interaction.DrawOptions;
-import olx.interaction.ModifyOptions;
-import olx.interaction.SnapOptions;
+import olx.interaction.*;
 import olx.proj.ProjectionOptions;
 import ol.source.*;
 import olx.source.*;
 import ol.style.*;
 import ol.style.Circle;
 import olx.style.*;
-import olx.interaction.TranslateOptions;
 import olx.layer.LayerOptions;
 
 import java.util.List;
@@ -47,8 +46,16 @@ public class OLFactory {
         return new $wnd.ol.control.Attribution();
     }-*/;
 
+    public static native FullScreen createFullScreenControl(FullScreenOptions fullScreenOptions) /*-{
+        return new $wnd.ol.control.FullScreen(fullScreenOptions);
+    }-*/;
+
     public static native FullScreen createFullScreenControl() /*-{
         return new $wnd.ol.control.FullScreen();
+    }-*/;
+
+    public static native ol.control.Zoom createZoom(ZoomOptions zoomOptions) /*-{
+        return new $wnd.ol.control.Zoom(zoomOptions);
     }-*/;
 
     public static native MousePosition createMousePositionControl() /*-{
@@ -127,6 +134,10 @@ public class OLFactory {
 
     public static native Modify createModify(ModifyOptions modifyOptions) /*-{
         return new $wnd.ol.interaction.Modify(modifyOptions);
+    }-*/;
+
+    public static native ol.interaction.MouseWheelZoom createMouseWheelZoomInteraction(MouseWheelZoomOptions mouseWheelZoomOptions) /*-{
+        return new $wnd.ol.interaction.MouseWheelZoom(mouseWheelZoomOptions);
     }-*/;
 
     public static native ol.interaction.Select createSelectInteraction() /*-{

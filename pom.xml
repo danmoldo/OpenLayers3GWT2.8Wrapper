@@ -6,14 +6,14 @@
   <groupId>today.learnjava.ol3</groupId>
   <artifactId>gwt28-ol3</artifactId>
   <packaging>pom</packaging>
-  <version>1.4</version>
+  <version>1.8-SNAPSHOT</version>
   <name>${project.artifactId}</name>
 
   <properties>
-    <gwt.version>2.8.0-rc3</gwt.version>
+    <gwt.version>2.8.2</gwt.version>
     <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <gwt.maven.plugin.version>2.8.0-rc3</gwt.maven.plugin.version>
+    <gwt.maven.plugin.version>2.8.2</gwt.maven.plugin.version>
   </properties>
 
   <dependencyManagement>
